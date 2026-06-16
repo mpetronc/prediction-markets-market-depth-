@@ -1,4 +1,4 @@
-## Project log*
+## Project log
 
 ### 11.07.2026:
 - Create Github project
@@ -11,8 +11,7 @@
 
 ### 13.07.2026-16.07.2026:
 - Evaluated possible data-source combinations
-- Selected a balanced setup that provides the required information for estimating price impact accurately
-
+-Selected a preliminary datasource setup and identified which required components are still missing.
 > **Chosen datasource setup**
 >
 | Data Needed | Source | Gathered? |
@@ -25,11 +24,12 @@
 | Kalshi BBO timeline | Predexon | Planned |
 | Kalshi trades timeline | Official Kalshi API | Planned |
 | Kalshi metadata | Official Kalshi API | Planned |
-> This setup uses each source for what it is strongest at: Kaggle for Polymarket historical microstructure data, Predexon for Kalshi historical BBO, and official APIs for metadata and trade validation. Whilst taking performance into account.
+> This setup uses each source for what it is strongest at: Kaggle for Polymarket, Predexon for Kalshi historical BBO, and official APIs for metadata and trade validation. Whilst taking performance into account.
 
 ### Kaggle Polymarket Dataset Structure
 - Looked at Kaggle data and created a mental mindmap:
-```text│
+```text
+
 ├── Events File
 │   ├── Describes high-level events
 │   ├── Example: "Duke vs UNC"
@@ -68,4 +68,4 @@
 │       ├── Extract YES/NO token IDs
 │       ├── Check market volume and liquidity
 │       └── Match the market to the corresponding Kalshi ticker
-```  
+```
