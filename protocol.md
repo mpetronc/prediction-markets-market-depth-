@@ -15,15 +15,16 @@
 
 > **Chosen datasource setup**
 >
-> | Data Needed | Source |
-> |---|---|
-> | Polymarket BBO | Kaggle |
-> | Polymarket trades | Kaggle |
-> | Polymarket metadata | Official Polymarket API |
-> | Kalshi BBO | Predexon |
-> | Kalshi trades | Official Kalshi API |
-> | Kalshi metadata | Official Kalshi API |
->
+| Data Needed | Source | Gathered? |
+|---|---|---|
+| Polymarket events | Kaggle `polymarket_events.csv` | True |
+| Polymarket market summaries | Kaggle `polymarket_markets.csv` | True |
+| Polymarket BBO timeline | TBD / still missing | False |
+| Polymarket trades timeline | TBD / still missing | False |
+| Polymarket metadata validation | Official Polymarket API | Planned |
+| Kalshi BBO timeline | Predexon | Planned |
+| Kalshi trades timeline | Official Kalshi API | Planned |
+| Kalshi metadata | Official Kalshi API | Planned |
 > This setup uses each source for what it is strongest at: Kaggle for Polymarket historical microstructure data, Predexon for Kalshi historical BBO, and official APIs for metadata and trade validation. Whilst taking performance into account.
 
 ### Kaggle Polymarket Dataset Structure
@@ -67,4 +68,4 @@
 │       ├── Extract YES/NO token IDs
 │       ├── Check market volume and liquidity
 │       └── Match the market to the corresponding Kalshi ticker
-``` 
+```  
