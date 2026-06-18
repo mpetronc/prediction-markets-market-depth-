@@ -69,8 +69,7 @@
 │       ├── Check market volume and liquidity
 │       └── Match the market to the corresponding Kalshi ticker
 ```
-### 18.07.2026 
-
+### 18.07.2026
 - Built the testing pipeline to find March Madness markets
 - Tested the Kaggle Polymarket files locally
 - Confirmed that Kaggle contains NCAA CBB markets (seriesSlug = ncaa-cbb), but only for regular-season games from Nov/Dec 2025, not March Madness 
