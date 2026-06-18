@@ -70,7 +70,6 @@
 │       └── Match the market to the corresponding Kalshi ticker
 ```
 ### 18.07.2026 
-17.07.2026:
 
 - Built the testing pipeline to find March Madness markets
 - Tested the Kaggle Polymarket files locally
