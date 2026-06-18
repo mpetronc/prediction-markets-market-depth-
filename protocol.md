@@ -1,18 +1,18 @@
 ## Project log
 
 ### 11.07.2026:
-- Create Github project
+- Create GitHub project
 - Find feasible dataset
 - Organize workflow 
 
 ### 12.07.2026:
-- Compared NFl vs NCAA(March Madness) in data
+- Compared NFL vs NCAA(March Madness) in data
 - Chose March Madness as first market  
 
 ### 13.07.2026-16.07.2026:
 - Evaluated possible data-source combinations
--Selected a preliminary datasource setup and identified which required components are still missing.
-> **Chosen datasource setup**
+- Selected a preliminary data-source setup and identified which required components are still missing.
+> **Preliminary datasource setup**
 >
 | Data Needed | Source | Gathered? |
 |---|---|---|
@@ -69,3 +69,11 @@
 │       ├── Check market volume and liquidity
 │       └── Match the market to the corresponding Kalshi ticker
 ```
+### 18.07.2026 
+17.07.2026:
+
+- Built the testing pipeline to find March Madness markets
+- Tested the Kaggle Polymarket files locally
+- Confirmed that Kaggle contains NCAA CBB markets (seriesSlug = ncaa-cbb), but only for regular-season games from Nov/Dec 2025, not March Madness 
+- Identified GitHub Polymarket dataset as a more promising source because it includes larger market metadata and trade-level data
+- Next step: test the GitHub Polymarket dataset locally (looks promising).
