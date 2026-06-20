@@ -1,7 +1,7 @@
 .env
-data/raw/
-data/processed/
 __pycache__/
-.ipynb_checkpoints/
+*.pyc
 .DS_Store
-.venv/
+
+data/processed/
+data/results/

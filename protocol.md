@@ -75,3 +75,9 @@
 - Confirmed that Kaggle contains NCAA CBB markets (seriesSlug = ncaa-cbb), but only for regular-season games from Nov/Dec 2025, not March Madness 
 - Identified GitHub Polymarket dataset as a more promising source because it includes larger market metadata and trade-level data
 - Next step: test the GitHub Polymarket dataset locally (looks promising).
+
+### 19.07.2026
+- Cleaned and simplified project structure
+- Decided to use Predexon as main source for BBO snapshots and trade data
+- Clarified that Kaggle/GitHub are only backup/reference sources
+- Set up folders for raw metadata, matched markets, processed BBO/trades, and results
