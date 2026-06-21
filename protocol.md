@@ -81,3 +81,15 @@
 - Decided to use Predexon as main source for BBO snapshots and trade data
 - Clarified that Kaggle/GitHub are only backup/reference sources
 - Set up folders for raw metadata, matched markets, processed BBO/trades, and results
+
+### 20.07.2026
+- Gathered all relevant March Madness game-winner markets for both Kalshi and Polymarket
+- Completed the metadata recovery step for missing Polymarket markets
+- Used Polymarket event links/slugs to recover archived March Madness market metadata
+- Added the recovered Polymarket winner markets to the project dataset
+- Filtered out non-winner markets such as spreads and over/under markets
+- Combined the original and recovered Polymarket market files into one master file
+- Confirmed that the final Polymarket dataset contains 67 unique March Madness game markets
+- Confirmed that the Kalshi and Polymarket metadata files now both contain 67 unique games
+- Prepared both platform datasets for the next matching step
+- Next step is to create the final matched Kalshi-Polymarket market file
