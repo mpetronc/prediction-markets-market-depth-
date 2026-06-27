@@ -89,7 +89,21 @@
 - Added the recovered Polymarket winner markets to the project dataset
 - Filtered out non-winner markets such as spreads and over/under markets
 - Combined the original and recovered Polymarket market files into one master file
-- Confirmed that the final Polymarket dataset contains 67 unique March Madness game markets
+- Confirmed that t21.07.2026
+
+### 21.07.2026
+* Finalized the matched-market metadata pipeline
+* Updated scripts to match the new project folder structure
+* Matched Kalshi and Polymarket markets using cleaned unordered team pairs
+* Confirmed that all 67 March Madness games were matched successfully
+* Created MM_matched_markets.csv as the full matched metadata file
+* Created MM_market_map.csv as the compact operational mapping file
+* Mapped each game to a unique internal game_id
+  * Included Kalshi event tickers and team-specific Kalshi market tickers
+  * Included Polymarket event slugs, market IDs, condition IDs, and CLOB token IDs
+  * Verified that all 67 games have complete Kalshi and Polymarket identifiers
+* Confirmed there are no unmatched Kalshi or Polymarket markets
 - Confirmed that the Kalshi and Polymarket metadata files now both contain 67 unique games
 - Prepared both platform datasets for the next matching step
 - Next step is to create the final matched Kalshi-Polymarket market file
+
