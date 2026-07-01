@@ -1,15 +1,15 @@
 ## Project log
 
-### 11.07.2026:
+### 11.06.2026:
 - Create GitHub project
 - Find feasible dataset
 - Organize workflow 
 
-### 12.07.2026:
+### 12.06.2026:
 - Compared NFL vs NCAA(March Madness) in data
 - Chose March Madness as first market  
 
-### 13.07.2026-16.07.2026:
+### 13.06.2026-16.06.2026:
 - Evaluated possible data-source combinations
 - Selected a preliminary data-source setup and identified which required components are still missing.
 > **Preliminary datasource setup**
@@ -69,29 +69,28 @@
 │       ├── Check market volume and liquidity
 │       └── Match the market to the corresponding Kalshi ticker
 ```
-### 18.07.2026
+### 18.06.2026
 - Built the testing pipeline to find March Madness markets
 - Tested the Kaggle Polymarket files locally
 - Confirmed that Kaggle contains NCAA CBB markets (seriesSlug = ncaa-cbb), but only for regular-season games from Nov/Dec 2025, not March Madness 
 - Identified GitHub Polymarket dataset as a more promising source because it includes larger market metadata and trade-level data
 - Next step: test the GitHub Polymarket dataset locally (looks promising).
 
-### 19.07.2026
+### 19.06.2026
 - Cleaned and simplified project structure
 - Decided to use Predexon as main source for BBO snapshots and trade data
 - Clarified that Kaggle/GitHub are only backup/reference sources
 - Set up folders for raw metadata, matched markets, processed BBO/trades, and results
 
-### 20.07.2026
+### 20.06.2026
 - Gathered all relevant March Madness game-winner markets for both Kalshi and Polymarket
 - Completed the metadata recovery step for missing Polymarket markets
 - Used Polymarket event links/slugs to recover archived March Madness market metadata
 - Added the recovered Polymarket winner markets to the project dataset
 - Filtered out non-winner markets such as spreads and over/under markets
 - Combined the original and recovered Polymarket market files into one master file
-- Confirmed that t21.07.2026
 
-### 21.07.2026
+### 21.06.2026
 * Finalized the matched-market metadata pipeline
 * Updated scripts to match the new project folder structure
 * Matched Kalshi and Polymarket markets using cleaned unordered team pairs
@@ -107,3 +106,10 @@
 - Prepared both platform datasets for the next matching step
 - Next step is to create the final matched Kalshi-Polymarket market file
 
+### 28.06.2026-01.07.2026
+- Completed full historical trade data collection for all 67 NCAA March Madness game-winner markets across Kalshi and Polymarket
+- Collected over 4.1 million Kalshi trades and 759,000 Polymarket trades from game start through market resolution
+- Successfully implemented historical best bid/offer (BBO) snapshot collection for both exchanges
+- Collected approximately 2.66 million Kalshi BBO snapshots and 724,000 Polymarket BBO snapshots
+- Identified and verified a single missing Kalshi BBO instrument (`KXNCAAMBGAME-26APR04MICHARIZ-ARIZ`), likely due to unavailable historical data from the Predexon API rather than a data collection error
+- Validated dataset integrity by confirming all 67 games were processed, duplicate trade IDs were removed where appropriate, and all fetched data was written successfully to the master CSV datasets
