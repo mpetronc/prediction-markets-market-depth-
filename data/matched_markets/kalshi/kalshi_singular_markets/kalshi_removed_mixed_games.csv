@@ -1,0 +1,516 @@
+event_ticker,event_title,away_team,home_team,game_classification
+KXNCAAMBGAME-26FEB17TTUASU,Texas Tech at Arizona St.,Texas Tech,Arizona St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB20CPHAW,Cal Poly at Hawai'i,Cal Poly,Hawaii,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR13GWSLU,George Washington at Saint Louis,George Washington,Saint Louis,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN06MICHPSU,Michigan at Penn St.,Michigan,Penn St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB09XAVSJU,Xavier at St. John's,Xavier,St. John's,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR14MISSARK,Ole Miss at Arkansas,Ole Miss,Arkansas,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR13OKLAARK,Oklahoma at Arkansas,Oklahoma,Arkansas,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB16SYRDUKE,Syracuse at Duke,Syracuse,Duke,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR06MOHOHIO,Miami (OH) at Ohio,Miami (Ohio),Ohio,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB11MICHNW,Michigan at Northwestern,Michigan,Northwestern,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR03KUASU,Kansas at Arizona St.,Kansas,Arizona St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR12FSUDUKE,Florida St. at Duke,Florida St.,Duke,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10NEBIND,Nebraska at Indiana,Nebraska,Indiana,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR13MISSALA,Ole Miss at Alabama,Ole Miss,Alabama,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10BYUUTAH,BYU at Utah,BYU,Utah,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR12MASSMOH,UMass at Miami (OH),UMass,Miami (Ohio),mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN20UNLVUSU,UNLV at Utah St.,UNLV,Utah St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB13MASSAKR,UMass at Akron,UMass,Akron,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN29HAWUCI,Hawai'i at UC Irvine,Hawaii,UC Irvine,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN18WICHUSF,Wichita St. at South Florida,Wichita St.,South Florida,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB21UKAUB,Kentucky at Auburn,Kentucky,Auburn,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN31INDUCLA,Indiana at UCLA,Indiana,UCLA,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN07CONNPROV,UConn at Providence,UConn,Providence,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN13VILLPROV,Villanova at Providence,Villanova,Providence,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB28BAYUCF,Baylor at UCF,Baylor,UCF,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN14ASUARIZ,Arizona St. at Arizona,Arizona St.,Arizona,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN27MSURUTG,Michigan St. at Rutgers,Michigan St.,Rutgers,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR14DAYSLU,Dayton at Saint Louis,Dayton,Saint Louis,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07CONNMARQ,UConn at Marquette,UConn,Marquette,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB21UNCSYR,North Carolina at Syracuse,North Carolina,Syracuse,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN27PURIND,Purdue at Indiana,Purdue,Indiana,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB24ARIZBAY,Arizona at Baylor,Arizona,Baylor,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07TXAMLSU,Texas A&M at LSU,Texas A&M,LSU,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB04GONZPORT,Gonzaga at Portland,Gonzaga,Portland,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB17VILLXAV,Villanova at Xavier,Villanova,Xavier,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR12AUBTENN,Auburn at Tennessee,Auburn,Tennessee,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24AUBFLA,Auburn at Florida,Auburn,Florida,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB25WISORE,Wisconsin at Oregon,Wisconsin,Oregon,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN17GTNCST,Georgia Tech at North Carolina St.,Georgia Tech,NC State,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB18CREICONN,Creighton at UConn,Creighton,UConn,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB28BYUWVU,BYU at West Virginia,BYU,West Virginia,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14TCUOKST,TCU at Oklahoma St.,TCU,Oklahoma St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07ARIZCOLO,Arizona at Colorado,Arizona,Colorado,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN27ARKOKLA,Arkansas at Oklahoma,Arkansas,Oklahoma,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR11CINUCF,Cincinnati at UCF,Cincinnati,UCF,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB11USCOSU,USC at Ohio St.,USC,Ohio St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR11MISSTEX,Ole Miss at Texas,Ole Miss,Texas,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24NEBMINN,Nebraska at Minnesota,Nebraska,Minnesota,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR01MSUIND,Michigan St. at Indiana,Michigan St.,Indiana,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07OREPUR,Oregon at Purdue,Oregon,Purdue,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB10BYUBAY,BYU at Baylor,BYU,Baylor,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB11IOWAMD,Iowa at Maryland,Iowa,Maryland,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR10IDHOEWU,Idaho at Eastern Washington,Idaho,Eastern Washington,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN08NWMSU,Northwestern at Michigan St.,Northwestern,Michigan St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN27UVAND,Virginia at Notre Dame,Virginia,Notre Dame,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN17ISUCIN,Iowa St. at Cincinnati,Iowa St.,Cincinnati,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB04MSUMINN,Michigan St. at Minnesota,Michigan St.,Minnesota,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR08LBSUHAW,Long Beach St. at Hawai'i,Long Beach St.,Hawaii,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR14PENNHARV,Penn at Harvard,Penn,Harvard,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN25USCWIS,USC at Wisconsin,USC,Wisconsin,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14COLOBYU,Colorado at BYU,Colorado,BYU,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10OKSTISU,Oklahoma St. at Iowa St.,Oklahoma St.,Iowa St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR04PURNW,Purdue at Northwestern,Purdue,Northwestern,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR04BAYHOU,Baylor at Houston,Baylor,Houston,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB21CINKU,Cincinnati at Kansas,Cincinnati,Kansas,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10BCLOU,Boston College at Louisville,Boston College,Louisville,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR03VANMISS,Vanderbilt at Ole Miss,Vanderbilt,Ole Miss,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN19JOESVCU,Saint Joseph's at VCU,Saint Joseph's,VCU,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN20LSUFLA,LSU at Florida,LSU,Florida,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB03MOHBUFF,Miami (OH) at Buffalo,Miami (Ohio),Buffalo,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB15USFFAU,South Florida at Florida Atlantic,South Florida,Florida Atlantic,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR12WASHWIS,Washington at Wisconsin,Washington,Wisconsin,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB25PORTGONZ,Portland at Gonzaga,Portland,Gonzaga,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB28HALLCONN,Seton Hall at UConn,Seton Hall,UConn,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR10UTRGVMCNS,UT Rio Grande Valley at McNeese,UT Rio Grande Valley,McNeese,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN20MINNOSU,Minnesota at Ohio St.,Minnesota,Ohio St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR12MISSUGA,Ole Miss at Georgia,Ole Miss,Georgia,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB08UCSDHAW,UC San Diego at Hawai'i,UC San Diego,Hawaii,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR09ORSTGONZ,Oregon St. at Gonzaga,Oregon St.,Gonzaga,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB04BYUOKST,BYU at Oklahoma St.,BYU,Oklahoma St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN28USCIOWA,USC at Iowa,USC,Iowa,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07OKLATEX,Oklahoma at Texas,Oklahoma,Texas,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB20SIEMRMK,Siena at Merrimack,Siena,Merrimack,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN28SFSCU,San Francisco at Santa Clara,San Francisco,Santa Clara,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB21FSUCLEM,Florida St. at Clemson,Florida St.,Clemson,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR10SYRSMU,Syracuse at SMU,Syracuse,SMU,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24LSUARK,LSU at Arkansas,LSU,Arkansas,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN13MARQSJU,Marquette at St. John's,Marquette,St. John's,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR11OKSTTCU,Oklahoma St. at TCU,Oklahoma St.,TCU,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB24MINNMICH,Minnesota at Michigan,Minnesota,Michigan,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB17VTMIA,Virginia Tech at Miami (FL),Virginia Tech,Miami (FL),mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN25FAUUSF,Florida Atlantic at South Florida,Florida Atlantic,South Florida,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR09TOWSHOF,Towson at Hofstra,Towson,Hofstra,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB18CLEMWAKE,Clemson at Wake Forest,Clemson,Wake Forest,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN14DUKECAL,Duke at California,Duke,California,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN28MINNWIS,Minnesota at Wisconsin,Minnesota,Wisconsin,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07VILLGTWN,Villanova at Georgetown,Villanova,Georgetown,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR08ILLMD,Illinois at Maryland,Illinois,Maryland,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07HOUOKST,Houston at Oklahoma St.,Houston,Oklahoma St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07WISIND,Wisconsin at Indiana,Wisconsin,Indiana,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN17ALAOKLA,Alabama at Oklahoma,Alabama,Oklahoma,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB17SLUURI,Saint Louis at Rhode Island,Saint Louis,Rhode Island,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN20KUCOLO,Kansas at Colorado,Kansas,Colorado,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR11PITTNCST,Pittsburgh at North Carolina St.,Pittsburgh,NC State,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB04IOWAWASH,Iowa at Washington,Iowa,Washington,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB21UCSBHAW,UC Santa Barbara at Hawai'i,UC Santa Barbara,Hawaii,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN21MDILL,Maryland at Illinois,Maryland,Illinois,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB04CLEMSTAN,Clemson at Stanford,Clemson,Stanford,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR13CSFHAW,Cal State Fullerton at Hawai'i,Cal State Fullerton,Hawaii,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR08UNCGFUR,UNC Greensboro at Furman,UNC Greensboro,Furman,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR11MDIOWA,Maryland at Iowa,Maryland,Iowa,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB25CITFUR,The Citadel at Furman,The Citadel,Furman,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24MISSUK,Ole Miss at Kentucky,Ole Miss,Kentucky,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB10MARQVILL,Marquette at Villanova,Marquette,Villanova,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR11LSUUK,LSU at Kentucky,LSU,Kentucky,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN17MICHORE,Michigan at Oregon,Michigan,Oregon,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07ALAAUB,Alabama at Auburn,Alabama,Auburn,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB10DUKEPITT,Duke at Pittsburgh,Duke,Pittsburgh,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR13DUQVCU,Duquesne at VCU,Duquesne,VCU,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24TCUBAY,TCU at Baylor,TCU,Baylor,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB13SLULCHI,Saint Louis at Loyola Chicago,Saint Louis,Loyola Chicago,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14GTWNCONN,Georgetown at UConn,Georgetown,UConn,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB10UVAFSU,Virginia at Florida St.,Virginia,Florida St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB13CLMBPENN,Columbia at Penn,Columbia,Penn,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07OKLAVAN,Oklahoma at Vanderbilt,Oklahoma,Vanderbilt,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN29SAMFUR,Samford at Furman,Samford,Furman,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN28LEHARMY,Lehigh at Army,Lehigh,Army,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB17MOHMASS,Miami (OH) at UMass,Miami (Ohio),UMass,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR13KENNSHSU,Kennesaw St. at Sam Houston,Kennesaw St.,Sam Houston,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN08RUTGILL,Rutgers at Illinois,Rutgers,Illinois,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR08PACSCU,Pacific at Santa Clara,Pacific,Santa Clara,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN11OSUWASH,Ohio St. at Washington,Ohio St.,Washington,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN11CINUCF,Cincinnati at UCF,Cincinnati,UCF,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10UGASCAR,Georgia at South Carolina,Georgia,South Carolina,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB18SJUMARQ,St. John's at Marquette,St. John's,Marquette,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN14UKLSU,Kentucky at LSU,Kentucky,LSU,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN28TEXAUB,Texas at Auburn,Texas,Auburn,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB20AKRBALL,Akron at Ball St.,Akron,Ball St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR12GTWNVILL,Georgetown at Villanova,Georgetown,Villanova,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN14MISSUGA,Ole Miss at Georgia,Ole Miss,Georgia,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB17LSUTEX,LSU at Texas,LSU,Texas,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB21USUNEV,Utah St. at Nevada,Utah St.,Nevada,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14SMUSYR,SMU at Syracuse,SMU,Syracuse,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10PSUPUR,Penn St. at Purdue,Penn St.,Purdue,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB28UCLAMINN,UCLA at Minnesota,UCLA,Minnesota,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB24USCUCLA,USC at UCLA,USC,UCLA,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN14UNCSTAN,North Carolina at Stanford,North Carolina,Stanford,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN21PEPPGONZ,Pepperdine at Gonzaga,Pepperdine,Gonzaga,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB16GRAMPV,Grambling St. at Prairie View A&M,Grambling St.,Prairie View A&M,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN30LCHIVCU,Loyola Chicago at VCU,Loyola Chicago,VCU,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN06TXAMAUB,Texas A&M at Auburn,Texas A&M,Auburn,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14KSUHOU,Kansas St. at Houston,Kansas St.,Houston,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB24MOHEMU,Miami (OH) at Eastern Michigan,Miami (Ohio),Eastern Michigan,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN30KENTAKR,Kent St. at Akron,Kent St.,Akron,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN15GONZWSU,Gonzaga at Washington St.,Gonzaga,Washington St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB03AKREMU,Akron at Eastern Michigan,Akron,Eastern Michigan,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB25SMUCAL,SMU at California,SMU,California,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN31ARIZASU,Arizona at Arizona St.,Arizona,Arizona St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07WASHUCLA,Washington at UCLA,Washington,UCLA,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN17CONNGTWN,UConn at Georgetown,UConn,Georgetown,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN23USUCSU,Utah St. at Colorado St.,Utah St.,Colorado St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07GTCLEM,Georgia Tech at Clemson,Georgia Tech,Clemson,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB18SMCSEA,Saint Mary's at Seattle,Saint Mary's,Seattle,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR03BYUCIN,BYU at Cincinnati,BYU,Cincinnati,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24SJUXAV,St. John's at Xavier,St. John's,Xavier,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN20HALLSJU,Seton Hall at St. John's,Seton Hall,St. John's,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR14CHARUSF,Charlotte at South Florida,Charlotte,South Florida,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB08NWIOWA,Northwestern at Iowa,Northwestern,Iowa,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR11BYUWVU,BYU at West Virginia,BYU,West Virginia,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB10WSUGONZ,Washington St. at Gonzaga,Washington St.,Gonzaga,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14UGAOKLA,Georgia at Oklahoma,Georgia,Oklahoma,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN23KENNLT,Kennesaw St. at Louisiana Tech,Kennesaw St.,Louisiana Tech,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB05PSUMICH,Penn St. at Michigan,Penn St.,Michigan,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB20INDPUR,Indiana at Purdue,Indiana,Purdue,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB28VTUNC,Virginia Tech at North Carolina,Virginia Tech,North Carolina,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN31CALMIA,California at Miami (FL),California,Miami (FL),mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN23FURUNCG,Furman at UNC Greensboro,Furman,UNC Greensboro,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN17UNCCAL,North Carolina at California,North Carolina,California,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR08IDHOMTST,Idaho at Montana St.,Idaho,Montana St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB08TLSAUSF,Tulsa at South Florida,Tulsa,South Florida,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB28IOWAPSU,Iowa at Penn St.,Iowa,Penn St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN08OSUORE,Ohio St. at Oregon,Ohio St.,Oregon,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR03OKSTUCF,Oklahoma St. at UCF,Oklahoma St.,UCF,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN25CSNHAW,Cal State Northridge at Hawai'i,Cal State Northridge,Hawaii,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB15INDILL,Indiana at Illinois,Indiana,Illinois,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN31USFTEM,South Florida at Temple,South Florida,Temple,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB19UVMUMBC,Vermont at UMBC,Vermont,UMBC,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB12MTUKENN,Middle Tennessee at Kennesaw St.,Middle Tennessee,Kennesaw St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR01TULNUSF,Tulane at South Florida,Tulane,South Florida,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10MIZZMISS,Missouri at Ole Miss,Missouri,Ole Miss,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN17MINNILL,Minnesota at Illinois,Minnesota,Illinois,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24UTAHBYU,Utah at BYU,Utah,BYU,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB28NCSTND,North Carolina St. at Notre Dame,NC State,Notre Dame,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR06UCRVHAW,UC Riverside at Hawai'i,UC Riverside,Hawaii,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB17GWVCU,George Washington at VCU,George Washington,VCU,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB17SCARFLA,South Carolina at Florida,South Carolina,Florida,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB20BGSUMOH,Bowling Green at Miami (OH),Bowling Green,Miami (Ohio),mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN21ORSTSMC,Oregon St. at Saint Mary's,Oregon St.,Saint Mary's,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB28HAWCSF,Hawai'i at Cal State Fullerton,Hawaii,Cal State Fullerton,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB10VANAUB,Vanderbilt at Auburn,Vanderbilt,Auburn,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN20RUTGIOWA,Rutgers at Iowa,Rutgers,Iowa,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB28GCUSU,Grand Canyon at Utah St.,Grand Canyon,Utah St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN14UCFKSU,UCF at Kansas St.,UCF,Kansas St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN14VTSMU,Virginia Tech at SMU,Virginia Tech,SMU,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR08CHARUSF,Charlotte at South Florida,Charlotte,South Florida,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07KSUTCU,Kansas St. at TCU,Kansas St.,TCU,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR12BUFFAKR,Buffalo at Akron,Buffalo,Akron,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR03USUUNLV,Utah St. at UNLV,Utah St.,UNLV,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14SMCPAC,Saint Mary's at Pacific,Saint Mary's,Pacific,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24OKLAMIZZ,Oklahoma at Missouri,Oklahoma,Missouri,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR13UTUCBU,Utah Tech at California Baptist,Utah Tech,Cal Baptist,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN21CINARIZ,Cincinnati at Arizona,Cincinnati,Arizona,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10ARKAUB,Arkansas at Auburn,Arkansas,Auburn,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB11VTCLEM,Virginia Tech at Clemson,Virginia Tech,Clemson,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN06IOWAMINN,Iowa at Minnesota,Iowa,Minnesota,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR09NKUWRST,Northern Kentucky at Wright St.,Northern Kentucky,Wright St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN28UCLAORE,UCLA at Oregon,UCLA,Oregon,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN28STANMIA,Stanford at Miami (FL),Stanford,Miami (FL),mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR10KSUBYU,Kansas St. at BYU,Kansas St.,BYU,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN26PSUOSU,Penn St. at Ohio St.,Penn St.,Ohio St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN14VCUURI,VCU at Rhode Island,VCU,Rhode Island,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR02IDHOEWU,Idaho at Eastern Washington,Idaho,Eastern Washington,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN16BAYKU,Baylor at Kansas,Baylor,Kansas,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14VILLCREI,Villanova at Creighton,Villanova,Creighton,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07UGAMSST,Georgia at Mississippi St.,Georgia,Mississippi St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR13HALLSJU,Seton Hall at St. John's,Seton Hall,St. John's,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR08COLGLEH,Colgate at Lehigh,Colgate,Lehigh,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR10ALCNPV,Alcorn St. at Prairie View A&M,Alcorn St.,Prairie View A&M,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR06SJUHALL,St. John's at Seton Hall,St. John's,Seton Hall,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN11UCIHAW,UC Irvine at Hawai'i,UC Irvine,Hawaii,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR11PVCOOK,Prairie View A&M at Bethune-Cookman,Prairie View A&M,Bethune-Cookman,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07ASUISU,Arizona St. at Iowa St.,Arizona St.,Iowa St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB01IOWAORE,Iowa at Oregon,Iowa,Oregon,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10VILLMARQ,Villanova at Marquette,Villanova,Marquette,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB03SLUDAV,Saint Louis at Davidson,Saint Louis,Davidson,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB21PACGONZ,Pacific at Gonzaga,Pacific,Gonzaga,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB13OHIOMOH,Ohio at Miami (OH),Ohio,Miami (Ohio),mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB24DUKEND,Duke at Notre Dame,Duke,Notre Dame,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB25USUSDSU,Utah St. at San Diego St.,Utah St.,San Diego St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR06WEBBHP,Gardner-Webb at High Point,Gardner-Webb,High Point,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14LSUTENN,LSU at Tennessee,LSU,Tennessee,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN17PURUSC,Purdue at USC,Purdue,USC,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN31AUBTENN,Auburn at Tennessee,Auburn,Tennessee,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB24MIAFSU,Miami (FL) at Florida St.,Miami (FL),Florida St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10KUWVU,Kansas at West Virginia,Kansas,West Virginia,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN31TEXOKLA,Texas at Oklahoma,Texas,Oklahoma,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14WVUUCF,West Virginia at UCF,West Virginia,UCF,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB18KENNMOSU,Kennesaw St. at Missouri St.,Kennesaw St.,Missouri St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14AUBARK,Auburn at Arkansas,Auburn,Arkansas,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB04USUUNM,Utah St. at New Mexico,Utah St.,New Mexico,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14SJUPROV,St. John's at Providence,St. John's,Providence,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN31CONNCREI,UConn at Creighton,UConn,Creighton,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10HOUBAY,Houston at Baylor,Houston,Baylor,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR13SCSTHOW,South Carolina St. at Howard,South Carolina St.,Howard,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB25MDNEB,Maryland at Nebraska,Maryland,Nebraska,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN27PROVCONN,Providence at UConn,Providence,UConn,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24SFGONZ,San Francisco at Gonzaga,San Francisco,Gonzaga,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB02MCNSSFA,McNeese at Stephen F. Austin,McNeese,Stephen F. Austin,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN07CALUVA,California at Virginia,California,Virginia,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24KUKSU,Kansas at Kansas St.,Kansas,Kansas St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB08TTUWVU,Texas Tech at West Virginia,Texas Tech,West Virginia,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR13GTWNCONN,Georgetown at UConn,Georgetown,UConn,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB18KUOKST,Kansas at Oklahoma St.,Kansas,Oklahoma St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR04VILLDEP,Villanova at DePaul,Villanova,DePaul,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB26BRYUMBC,Bryant at UMBC,Bryant,UMBC,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07BAYISU,Baylor at Iowa St.,Baylor,Iowa St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07STANNCST,Stanford at North Carolina St.,Stanford,NC State,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB12UMBCME,UMBC at Maine,UMBC,Maine,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR06VCUDAY,VCU at Dayton,VCU,Dayton,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN31SDSUUSU,San Diego St. at Utah St.,San Diego St.,Utah St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB18MISSTXAM,Ole Miss at Texas A&M,Ole Miss,Texas A&M,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN17NEBNW,Nebraska at Northwestern,Nebraska,Northwestern,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB08UNCGFUR,UNC Greensboro at Furman,UNC Greensboro,Furman,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN13WISMINN,Wisconsin at Minnesota,Wisconsin,Minnesota,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN14NEVUSU,Nevada at Utah St.,Nevada,Utah St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN17USUGC,Utah St. at Grand Canyon,Utah St.,Grand Canyon,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB18ETSUFUR,East Tennessee St. at Furman,East Tennessee St.,Furman,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR12OKLATXAM,Oklahoma at Texas A&M,Oklahoma,Texas A&M,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN22WISPSU,Wisconsin at Penn St.,Wisconsin,Penn St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN20OKSTTCU,Oklahoma St. at TCU,Oklahoma St.,TCU,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07QUCPEAY,Queens University at Austin Peay,Queens (N.C.),Austin Peay,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB23UTRGVMCNS,UT Rio Grande Valley at McNeese,UT Rio Grande Valley,McNeese,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10WAKEUNC,Wake Forest at North Carolina,Wake Forest,North Carolina,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN31DUKEVT,Duke at Virginia Tech,Duke,Virginia Tech,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07LASSLU,La Salle at Saint Louis,La Salle,Saint Louis,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14LOUBAY,Louisville at Baylor,Louisville,Baylor,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB21IDHOSAC,Idaho at Sacramento St.,Idaho,Sacramento St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN17TCUUTAH,TCU at Utah,TCU,Utah,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN17MSUWASH,Michigan St. at Washington,Michigan St.,Washington,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN07MIAWAKE,Miami (FL) at Wake Forest,Miami (FL),Wake Forest,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN27GWSLU,George Washington at Saint Louis,George Washington,Saint Louis,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14CBUUTU,California Baptist at Utah Tech,Cal Baptist,Utah Tech,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB10HOUUTAH,Houston at Utah,Houston,Utah,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB28NEBUSC,Nebraska at USC,Nebraska,USC,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR05RUTGMSU,Rutgers at Michigan St.,Rutgers,Michigan St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07SYRUVA,Syracuse at Virginia,Syracuse,Virginia,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN09MOHTOL,Miami (OH) at Toledo,Miami (Ohio),Toledo,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB24UKSCAR,Kentucky at South Carolina,Kentucky,South Carolina,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB24SLUDAY,Saint Louis at Dayton,Saint Louis,Dayton,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB27ULMTROY,Louisiana-Monroe at Troy,Louisiana-Monroe,Troy,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10GTMIA,Georgia Tech at Miami (FL),Georgia Tech,Miami (FL),mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB21UCFUTAH,UCF at Utah,UCF,Utah,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14HAWCSN,Hawai'i at Cal State Northridge,Hawaii,Cal State Northridge,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN31NIUMOH,Northern Illinois at Miami (OH),Northern Illinois,Miami (Ohio),mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB21ALALSU,Alabama at LSU,Alabama,LSU,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR03GTWNSJU,Georgetown at St. John's,Georgetown,St. John's,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07GONZORST,Gonzaga at Oregon St.,Gonzaga,Oregon St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN15UMBCBRY,UMBC at Bryant,UMBC,Bryant,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10MSSTUK,Mississippi St. at Kentucky,Mississippi St.,Kentucky,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB06DAYVCU,Dayton at VCU,Dayton,VCU,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN07FURCHAT,Furman at Chattanooga,Furman,Chattanooga,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR12RUTGUCLA,Rutgers at UCLA,Rutgers,UCLA,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14LIUNHC,LIU at New Haven,Long Island,New Haven,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN13CONNHALL,UConn at Seton Hall,UConn,Seton Hall,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN27MASSMOH,UMass at Miami (OH),UMass,Miami (Ohio),mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB28COLOHOU,Colorado at Houston,Colorado,Houston,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB02SYRUNC,Syracuse at North Carolina,Syracuse,North Carolina,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10OKLATXAM,Oklahoma at Texas A&M,Oklahoma,Texas A&M,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB26LIBKENN,Liberty at Kennesaw St.,Liberty,Kennesaw St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR08FAIRSIE,Fairfield at Siena,Fairfield,Siena,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR13PVAAMU,Prairie View A&M at Alabama A&M,Prairie View A&M,Alabama A&M,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07AUBALA,Auburn at Alabama,Auburn,Alabama,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB12HOFCOFC,Hofstra at Charleston,Hofstra,Charleston,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB11CONNBUT,UConn at Butler,UConn,Butler,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN08HOFTOWS,Hofstra at Towson,Hofstra,Towson,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN14AUBMIZZ,Auburn at Missouri,Auburn,Missouri,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB04NDLOU,Notre Dame at Louisville,Notre Dame,Louisville,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB21FLAMISS,Florida at Ole Miss,Florida,Ole Miss,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN20MOHKENT,Miami (OH) at Kent St.,Miami (Ohio),Kent St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR05USFMEM,South Florida at Memphis,South Florida,Memphis,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR04LCHISLU,Loyola Chicago at Saint Louis,Loyola Chicago,Saint Louis,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB03BCDUKE,Boston College at Duke,Boston College,Duke,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB24CINTTU,Cincinnati at Texas Tech,Cincinnati,Texas Tech,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB12DETWRST,Detroit Mercy at Wright St.,Detroit Mercy,Wright St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN23SLUSBON,Saint Louis at St. Bonaventure,Saint Louis,St. Bonaventure,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07MISSTEX,Ole Miss at Texas,Ole Miss,Texas,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07OKSTARIZ,Oklahoma St. at Arizona,Oklahoma St.,Arizona,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14CORPENN,Cornell at Penn,Cornell,Penn,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR11ASUISU,Arizona St. at Iowa St.,Arizona St.,Iowa St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR03TOLMOH,Toledo at Miami (OH),Toledo,Miami (Ohio),mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB08UCFCIN,UCF at Cincinnati,UCF,Cincinnati,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR06UCFWVU,UCF at West Virginia,UCF,West Virginia,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14MEMUSU,Memphis at Utah St.,Memphis,Utah St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB03SCARTEX,South Carolina at Texas,South Carolina,Texas,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR13KENTAKR,Kent St. at Akron,Kent St.,Akron,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10VCUGMU,VCU at George Mason,VCU,George Mason,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24WAKEDUKE,Wake Forest at Duke,Wake Forest,Duke,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07ARKMSST,Arkansas at Mississippi St.,Arkansas,Mississippi St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB21WVUTCU,West Virginia at TCU,West Virginia,TCU,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR12KENNWKU,Kennesaw St. at Western Kentucky,Kennesaw St.,Western Kentucky,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN31UVABC,Virginia at Boston College,Virginia,Boston College,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN07USFUNT,South Florida at North Texas,South Florida,North Texas,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR03TENNSCAR,Tennessee at South Carolina,Tennessee,South Carolina,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB28DUQSLU,Duquesne at Saint Louis,Duquesne,Saint Louis,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB11PEPPSMC,Pepperdine at Saint Mary's,Pepperdine,Saint Mary's,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN20FSUMIA,Florida St. at Miami (FL),Florida St.,Miami (FL),mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN13INDMSU,Indiana at Michigan St.,Indiana,Michigan St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB01TCUCOLO,TCU at Colorado,TCU,Colorado,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24FSUSMU,Florida St. at SMU,Florida St.,SMU,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB02HOWCOPP,Howard at Coppin St.,Howard,Coppin St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB10FRESUSU,Fresno St. at Utah St.,Fresno St.,Utah St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB21TXAMOKLA,Texas A&M at Oklahoma,Texas A&M,Oklahoma,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10USFTLSA,South Florida at Tulsa,South Florida,Tulsa,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR06PENNBRWN,Penn at Brown,Penn,Brown,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN17BUFFMOH,Buffalo at Miami (OH),Buffalo,Miami (Ohio),mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07MOHMRSH,Miami (OH) at Marshall,Miami (Ohio),Marshall,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN13SMCSF,Saint Mary's at San Francisco,Saint Mary's,San Francisco,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07INDOSU,Indiana at Ohio St.,Indiana,Ohio St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN17IOWAIND,Iowa at Indiana,Iowa,Indiana,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR06NIUAKR,Northern Illinois at Akron,Northern Illinois,Akron,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07VTUVA,Virginia Tech at Virginia,Virginia Tech,Virginia,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14TROYUSM,Troy at Southern Miss,Troy,Southern Miss,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN18ASUHOU,Arizona St. at Houston,Arizona St.,Houston,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07UGALSU,Georgia at LSU,Georgia,LSU,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07FURSAM,Furman at Samford,Furman,Samford,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN29WASHILL,Washington at Illinois,Washington,Illinois,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN14MICHWASH,Michigan at Washington,Michigan,Washington,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB24BUFFAKR,Buffalo at Akron,Buffalo,Akron,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24NCSTPITT,North Carolina St. at Pittsburgh,NC State,Pittsburgh,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07LOUWAKE,Louisville at Wake Forest,Louisville,Wake Forest,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN17MIZZLSU,Missouri at LSU,Missouri,LSU,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR02COPPHOW,Coppin St. at Howard,Coppin St.,Howard,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB26JKSTPV,Jackson St. at Prairie View A&M,Jackson St.,Prairie View A&M,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB19LINWTNST,Lindenwood at Tennessee St.,Lindenwood,Tennessee St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB10NDSMU,Notre Dame at SMU,Notre Dame,SMU,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB12TNSTUSI,Tennessee St. at Southern Indiana,Tennessee St.,Southern Indiana,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN29COLOISU,Colorado at Iowa St.,Colorado,Iowa St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB04HALLVILL,Seton Hall at Villanova,Seton Hall,Villanova,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB27DARTPENN,Dartmouth at Penn,Dartmouth,Penn,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN20TTUBAY,Texas Tech at Baylor,Texas Tech,Baylor,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB03MISSTENN,Ole Miss at Tennessee,Ole Miss,Tennessee,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN31CBUUTA,California Baptist at UT Arlington,Cal Baptist,UT Arlington,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14NWNEB,Northwestern at Nebraska,Northwestern,Nebraska,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN07ISUBAY,Iowa St. at Baylor,Iowa St.,Baylor,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN17GONZSEA,Gonzaga at Seattle,Gonzaga,Seattle,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB12UNIBEL,Northern Iowa at Belmont,Northern Iowa,Belmont,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB21SMCWSU,Saint Mary's at Washington St.,Saint Mary's,Washington St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR04CHSLIU,Chicago St. at LIU,Chicago St.,Long Island,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07KENNNMSU,Kennesaw St. at New Mexico St.,Kennesaw St.,New Mexico St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB09YALEHOW,Yale at Howard,Yale,Howard,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07UNMUSU,New Mexico at Utah St.,New Mexico,Utah St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN23CSBHAW,Cal State Bakersfield at Hawai'i,Cal State Bakersfield,Hawaii,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB18TROYULM,Troy at Louisiana-Monroe,Troy,Louisiana-Monroe,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB09UNIMURR,Northern Iowa at Murray St.,Northern Iowa,Murray St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB13QUINSIE,Quinnipiac at Siena,Quinnipiac,Siena,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB28WISWASH,Wisconsin at Washington,Wisconsin,Washington,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN14ILLNW,Illinois at Northwestern,Illinois,Northwestern,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB18NDSUSDST,North Dakota St. at South Dakota St.,North Dakota St.,South Dakota St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB28TCUKSU,TCU at Kansas St.,TCU,Kansas St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN14UCLAPSU,UCLA at Penn St.,UCLA,Penn St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN27TNTCTNST,Tennessee Tech at Tennessee St.,Tennessee Tech,Tennessee St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR12NWPUR,Northwestern at Purdue,Northwestern,Purdue,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB28HARVPENN,Harvard at Penn,Harvard,Penn,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR10MASSLUMBC,UMass Lowell at UMBC,UMass Lowell,UMBC,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN28BUTSJU,Butler at St. John's,Butler,St. John's,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07SMUFSU,SMU at Florida St.,SMU,Florida St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07NEBRUTG,Nebraska at Rutgers,Nebraska,Rutgers,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB11SEASCU,Seattle at Santa Clara,Seattle,Santa Clara,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07UNIBRAD,Northern Iowa at Bradley,Northern Iowa,Bradley,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN06UCFOKST,UCF at Oklahoma St.,UCF,Oklahoma St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR03MIZZOKLA,Missouri at Oklahoma,Missouri,Oklahoma,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB21CREISJU,Creighton at St. John's,Creighton,St. John's,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR12UNLVUSU,UNLV at Utah St.,UNLV,Utah St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN13BCCLEM,Boston College at Clemson,Boston College,Clemson,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN22USFUAB,South Florida at UAB,South Florida,UAB,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN13ALAMSST,Alabama at Mississippi St.,Alabama,Mississippi St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB21PENNYALE,Penn at Yale,Penn,Yale,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB09HCUMCNS,Houston Christian at McNeese,Houston Christian,McNeese,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14SCARALA,South Carolina at Alabama,South Carolina,Alabama,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB04OKLAUK,Oklahoma at Kentucky,Oklahoma,Kentucky,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07VTNCST,Virginia Tech at North Carolina St.,Virginia Tech,NC State,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB04UTSAUSF,UTSA at South Florida,UTSA,South Florida,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB18OKLATENN,Oklahoma at Tennessee,Oklahoma,Tennessee,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24SMCPORT,Saint Mary's at Portland,Saint Mary's,Portland,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR12PROVSJU,Providence at St. John's,Providence,St. John's,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14SHSUKENN,Sam Houston at Kennesaw St.,Sam Houston,Kennesaw St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10STANUVA,Stanford at Virginia,Stanford,Virginia,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR02MCNSNICH,McNeese at Nicholls St.,McNeese,Nicholls St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB28ORSTSCU,Oregon St. at Santa Clara,Oregon St.,Santa Clara,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB05BINGUMBC,Binghamton at UMBC,Binghamton,UMBC,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07MIABC,Miami (FL) at Boston College,Miami (FL),Boston College,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN30SIENIAG,Siena at Niagara,Siena,Niagara,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB16WAGLIU,Wagner at LIU,Wagner,Long Island,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB14HOFUNCW,Hofstra at UNC Wilmington,Hofstra,UNC Wilmington,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN20INDMICH,Indiana at Michigan,Indiana,Michigan,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB03SJUDEP,St. John's at DePaul,St. John's,DePaul,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB28SMUSTAN,SMU at Stanford,SMU,Stanford,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10MDUCLA,Maryland at UCLA,Maryland,UCLA,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR11WAKECLEM,Wake Forest at Clemson,Wake Forest,Clemson,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07UTAHKU,Utah at Kansas,Utah,Kansas,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN06NCSTBC,North Carolina St. at Boston College,NC State,Boston College,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24VTLOU,Virginia Tech at Louisville,Virginia Tech,Louisville,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN31MISSVAN,Ole Miss at Vanderbilt,Ole Miss,Vanderbilt,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10DEPCONN,DePaul at UConn,DePaul,UConn,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN23LIUSTNH,LIU at Stonehill,Long Island,Stonehill,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN14UTAHTTU,Utah at Texas Tech,Utah,Texas Tech,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB15DRKEUNI,Drake at Northern Iowa,Drake,Northern Iowa,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR03MSSTFLA,Mississippi St. at Florida,Mississippi St.,Florida,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10WSUSMC,Washington St. at Saint Mary's,Washington St.,Saint Mary's,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN27AAMUPV,Alabama A&M at Prairie View A&M,Alabama A&M,Prairie View A&M,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB25BUTVILL,Butler at Villanova,Butler,Villanova,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN17RUTGWIS,Rutgers at Wisconsin,Rutgers,Wisconsin,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24UCFCOLO,UCF at Colorado,UCF,Colorado,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10TTUCOLO,Texas Tech at Colorado,Texas Tech,Colorado,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB26HAWUCD,Hawai'i at UC Davis,Hawaii,UC Davis,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24NWUCLA,Northwestern at UCLA,Northwestern,UCLA,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB05TARLCBU,Tarleton St. at California Baptist,Tarleton St.,Cal Baptist,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR05HOWNORF,Howard at Norfolk St.,Howard,Norfolk St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR06UNIILST,Northern Iowa at Illinois St.,Northern Iowa,Illinois St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN29PREHP,Presbyterian at High Point,Presbyterian,High Point,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR05EVANUNI,Evansville at Northern Iowa,Evansville,Northern Iowa,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN14ECUUSF,East Carolina at South Florida,East Carolina,South Florida,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN14PACSCU,Pacific at Santa Clara,Pacific,Santa Clara,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07SLUGMU,Saint Louis at George Mason,Saint Louis,George Mason,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07MSMSIE,Mount St. Mary's at Siena,Mount St. Mary's,Siena,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR14JOESVCU,Saint Joseph's at VCU,Saint Joseph's,VCU,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB05IONASIE,Iona at Siena,Iona,Siena,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB25ILSTUNI,Illinois St. at Northern Iowa,Illinois St.,Northern Iowa,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB19MEMUSF,Memphis at South Florida,Memphis,South Florida,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24MIASYR,Miami (FL) at Syracuse,Miami (FL),Syracuse,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB05OSUMD,Ohio St. at Maryland,Ohio St.,Maryland,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN21WASHNEB,Washington at Nebraska,Washington,Nebraska,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07CINTCU,Cincinnati at TCU,Cincinnati,TCU,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR07UCLAUSC,UCLA at USC,UCLA,USC,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN14LEHBU,Lehigh at Boston University,Lehigh,Boston University,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN07CREIVILL,Creighton at Villanova,Creighton,Villanova,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN06SJUBUT,St. John's at Butler,St. John's,Butler,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN20MSUORE,Michigan St. at Oregon,Michigan St.,Oregon,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN06CMUAKR,Central Michigan at Akron,Central Michigan,Akron,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07SMUPITT,SMU at Pittsburgh,SMU,Pittsburgh,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24VCUDAV,VCU at Davidson,VCU,Davidson,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB07SFSMC,San Francisco at Saint Mary's,San Francisco,Saint Mary's,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB05DENNDSU,Denver at North Dakota St.,Denver,North Dakota St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB10ARKLSU,Arkansas at LSU,Arkansas,LSU,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB03PITTUVA,Pittsburgh at Virginia,Pittsburgh,Virginia,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN07ARKMISS,Arkansas at Ole Miss,Arkansas,Ole Miss,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24UVUCBU,Utah Valley at California Baptist,Utah Valley,Cal Baptist,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN24MORGHOW,Morgan St. at Howard,Morgan St.,Howard,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB24ISUUTAH,Iowa St. at Utah,Iowa St.,Utah,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN30PROVVILL,Providence at Villanova,Providence,Villanova,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR05KENNUTEP,Kennesaw St. at UTEP,Kennesaw St.,UTEP,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN10LSUVAN,LSU at Vanderbilt,LSU,Vanderbilt,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN21NDUNC,Notre Dame at North Carolina,Notre Dame,North Carolina,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB22RMUWRST,Robert Morris at Wright St.,Robert Morris,Wright St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB24ASUTCU,Arizona St. at TCU,Arizona St.,TCU,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN27SYRNCST,Syracuse at North Carolina St.,Syracuse,NC State,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN31CINHOU,Cincinnati at Houston,Cincinnati,Houston,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN29JMUTROY,James Madison at Troy,James Madison,Troy,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN20SMUWAKE,SMU at Wake Forest,SMU,Wake Forest,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN31PITTCLEM,Pittsburgh at Clemson,Pittsburgh,Clemson,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN30PENNCLMB,Penn at Columbia,Penn,Columbia,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN29UALRTNST,Little Rock at Tennessee St.,Little Rock,Tennessee St.,mixed_one_mm_one_not
+KXNCAAMBGAME-26MAR01RIDSIE,Rider at Siena,Rider,Siena,mixed_one_mm_one_not
+KXNCAAMBGAME-26FEB11ALAMISS,Alabama at Ole Miss,Alabama,Ole Miss,mixed_one_mm_one_not
+KXNCAAMBGAME-26JAN17WMUAKR,Western Michigan at Akron,Western Michigan,Akron,mixed_one_mm_one_not

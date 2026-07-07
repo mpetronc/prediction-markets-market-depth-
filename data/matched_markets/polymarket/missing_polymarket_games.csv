@@ -1,0 +1,10 @@
+event_ticker,game_clean,away_team_clean,home_team_clean,market_source_type,close_time,kalshi_pair_key
+KXNCAAMBGAME-26MAR19HAWARK,Hawaii vs Arkansas,Hawaii,Arkansas,game_winner,2026-03-19T22:41:00Z,Arkansas || Hawaii
+KXNCAAMBGAME-26MAR19NDSUMSU,North Dakota State vs Michigan State,North Dakota State,Michigan State,game_winner,2026-03-19T22:43:57Z,Michigan State || North Dakota State
+KXNCAAMBGAME-26MAR19TXAMSMC,Texas A&M vs Saint Mary's,Texas A&M,Saint Mary's,game_winner,2026-03-20T02:15:04Z,Saint Mary's || Texas A&M
+KXNCAAMBGAME-26MAR19PENNILL,Penn vs Illinois,Penn,Illinois,game_winner,2026-03-20T04:22:32Z,Illinois || Penn
+KXNCAAMBGAME-26MAR19IDHOHOU,Idaho vs Houston,Idaho,Houston,game_winner,2026-03-20T04:23:35Z,Houston || Idaho
+KXNCAAMBGAME-26MAR20QUCPUR,Queens (N.C.) vs Purdue,Queens (N.C.),Purdue,game_winner,2026-03-21T01:37:02Z,Purdue || Queens (N.C.)
+KXNCAAMBGAME-26MAR20PVFLA,Prairie View A&M vs Florida,Prairie View A&M,Florida,game_winner,2026-03-21T03:47:16Z,Florida || Prairie View A&M
+KXNCAAMBGAME-26MAR20MIZZMIA,Missouri vs Miami (FL),Missouri,Miami (FL),game_winner,2026-03-21T04:29:57Z,Miami (FL) || Missouri
+KXNCAAMBGAME-26MAR22MIAPUR,Miami (FL) vs Purdue,Miami (FL),Purdue,game_winner,2026-03-22T18:19:24Z,Miami (FL) || Purdue
