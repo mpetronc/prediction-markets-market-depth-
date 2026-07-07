@@ -113,3 +113,10 @@
 - Collected approximately 2.66 million Kalshi BBO snapshots and 724,000 Polymarket BBO snapshots
 - Identified and verified a single missing Kalshi BBO instrument (`KXNCAAMBGAME-26APR04MICHARIZ-ARIZ`), likely due to unavailable historical data from the Predexon API rather than a data collection error
 - Validated dataset integrity by confirming all 67 games were processed, duplicate trade IDs were removed where appropriate, and all fetched data was written successfully to the master CSV datasets
+
+### 07.07.2026-08.07.2026
+* Clarified that Kyle lambda must be computed separately using time-bucketed delta_mid_price and signed_volume
+* Decided not to merge Kyle lambda into the current summary-metrics file
+* Optimized the summary-metrics script by adding BBO downsampling, faster one-pass price-impact computation, instrument-level summaries, fill rates, notional depth, and logging
+* Added concurrent logging to both terminal output and data/results/compute_summary_metrics.log
+* Started running the updated compute_summary_metrics.py script on the full BBO dataset with 3,284,162 cleaned BBO rows
