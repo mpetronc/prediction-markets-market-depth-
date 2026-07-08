@@ -120,3 +120,23 @@
 * Optimized the summary-metrics script by adding BBO downsampling, faster one-pass price-impact computation, instrument-level summaries, fill rates, notional depth, and logging
 * Added concurrent logging to both terminal output and data/results/compute_summary_metrics.log
 * Started running the updated compute_summary_metrics.py script on the full BBO dataset with 3,284,162 cleaned BBO rows
+* Fixed price normalization logic so already-decimal Kalshi and Polymarket prices are no longer incorrectly divided by 100
+- Cleaned combined BBO data from 3,383,932 raw rows to 3,284,162 valid rows after removing invalid/missing quotes
+
+- Confirmed full BBO coverage across 67 games and both platforms, with the known exception of missing Kalshi BBO data for `MM_GAME_007`
+
+- Confirmed full trade coverage across 67 games and both platforms, with 4,929,106 valid trade rows
+
+- Replaced full raw-book walking with sampled price-impact computation to avoid unnecessary runtime blowup
+
+- Tested price-impact sampling at 10, 100, and 500 snapshots per instrument
+
+- Increased final sampled price-impact setting to 500 snapshots per instrument, producing 131,967 sampled BBO rows
+
+- Confirmed that full spread, depth, mid-price, volatility, volume, notional, and trade-count metrics still use the complete BBO/trade datasets
+
+- Clarified that the current price-impact output is a simulated visible-order-book impact measure, not the real Kyle lambda price-impact estimate
+
+- Saved updated outputs to `data/results/`, including sampled price-impact snapshots, instrument-level summary metrics, game/platform summary metrics, and the computation log
+
+- Decided to keep 500 snapshots per instrument as a strong descriptive setting and move next to the Kyle lambda regression step

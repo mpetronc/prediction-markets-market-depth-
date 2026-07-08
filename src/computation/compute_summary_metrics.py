@@ -37,7 +37,7 @@ BY_INSTRUMENT_OUTPUT = RESULTS_DIR / "summary_metrics_by_instrument_platform.csv
 # Config
 # ============================================================
 
-N_PRICE_IMPACT_SNAPSHOTS_PER_INSTRUMENT = 10
+N_PRICE_IMPACT_SNAPSHOTS_PER_INSTRUMENT = 1000
 PRICE_IMPACT_SIZES = (100, 500, 1000)
 
 
@@ -388,7 +388,6 @@ def load_trades() -> pd.DataFrame:
 # ============================================================
 # Sampling BBO for expensive price-impact computation only
 # ============================================================
-
 def sample_bbo_snapshots_per_instrument(
     bbo: pd.DataFrame,
     n_snapshots: int = 10,
@@ -404,29 +403,25 @@ def sample_bbo_snapshots_per_instrument(
     """
     group_cols = ["game_id", "platform", "team", "instrument_id"]
 
-    def sample_group(group: pd.DataFrame) -> pd.DataFrame:
-        group = group.sort_values("timestamp")
-
-        if len(group) <= n_snapshots:
-            return group
-
-        positions = np.linspace(
-            0,
-            len(group) - 1,
-            n_snapshots,
-            dtype=int,
-        )
-
-        return group.iloc[positions]
-
     before = len(bbo)
 
-    sampled = (
-        bbo
-        .groupby(group_cols, group_keys=False, dropna=False)
-        .apply(sample_group, include_groups=True)
-        .reset_index(drop=True)
-    )
+    bbo_sorted = bbo.sort_values(group_cols + ["timestamp"]).copy()
+
+    sampled_parts = []
+
+    for _, group in bbo_sorted.groupby(group_cols, dropna=False, sort=False):
+        if len(group) <= n_snapshots:
+            sampled_parts.append(group)
+        else:
+            positions = np.linspace(
+                0,
+                len(group) - 1,
+                n_snapshots,
+                dtype=int,
+            )
+            sampled_parts.append(group.iloc[positions])
+
+    sampled = pd.concat(sampled_parts, ignore_index=True)
 
     after = len(sampled)
 
@@ -445,7 +440,6 @@ def sample_bbo_snapshots_per_instrument(
     )
 
     return sampled
-
 
 # ============================================================
 # Raw order book parsing
