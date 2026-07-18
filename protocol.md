@@ -140,3 +140,10 @@
 - Saved updated outputs to `data/results/`, including sampled price-impact snapshots, instrument-level summary metrics, game/platform summary metrics, and the computation log
 
 - Decided to keep 500 snapshots per instrument as a strong descriptive setting and move next to the Kyle lambda regression step
+
+### 18.07.2026-19.07.2026
+
+* Developed a script to retrieve timestamps for all 67 March Madness games from ESPN
+* Used ESPN’s play-by-play “End of Game” records to identify each game’s exact cutoff time
+* Added UTC, Unix-second, and Unix-millisecond timestamps
+* Validated that all 67 games had an explicit end timestamp with no missing values or fallbacks
