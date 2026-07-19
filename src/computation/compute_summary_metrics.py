@@ -9,17 +9,21 @@ import numpy as np
 import pandas as pd
 
 
-# ============================================================
-# Paths
-# ============================================================
-
 ROOT = Path(__file__).resolve().parents[2]
 
-KALSHI_BBO_PATH = ROOT / "data/processed/kalshi/bbo.csv"
-POLYMARKET_BBO_PATH = ROOT / "data/processed/polymarket/bbo.csv"
+KALSHI_BBO_PATH = (
+    ROOT / "data/processed/kalshi/filtered_bbo_trades/bbo_filtered.csv"
+)
+POLYMARKET_BBO_PATH = (
+    ROOT / "data/processed/polymarket/filtered_bbo_trades/bbo_filtered.csv"
+)
 
-KALSHI_TRADES_PATH = ROOT / "data/processed/kalshi/trades.csv"
-POLYMARKET_TRADES_PATH = ROOT / "data/processed/polymarket/trades.csv"
+KALSHI_TRADES_PATH = (
+    ROOT / "data/processed/kalshi/filtered_bbo_trades/trades_filtered.csv"
+)
+POLYMARKET_TRADES_PATH = (
+    ROOT / "data/processed/polymarket/filtered_bbo_trades/trades_filtered.csv"
+)
 
 RESULTS_DIR = ROOT / "data/results"
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -33,17 +37,9 @@ BY_GAME_OUTPUT = RESULTS_DIR / "summary_metrics_by_game_platform.csv"
 BY_INSTRUMENT_OUTPUT = RESULTS_DIR / "summary_metrics_by_instrument_platform.csv"
 
 
-# ============================================================
-# Config
-# ============================================================
-
 N_PRICE_IMPACT_SNAPSHOTS_PER_INSTRUMENT = 1000
 PRICE_IMPACT_SIZES = (100, 500, 1000)
 
-
-# ============================================================
-# Logging
-# ============================================================
 
 def setup_logger() -> logging.Logger:
     logger = logging.getLogger("summary_metrics")
@@ -69,10 +65,6 @@ def setup_logger() -> logging.Logger:
 
 LOGGER = setup_logger()
 
-
-# ============================================================
-# Generic helpers
-# ============================================================
 
 def require_file(path: Path) -> None:
     if not path.exists():
@@ -100,43 +92,62 @@ def fill_rate(series: pd.Series) -> float:
 
 
 def parse_timestamp_column(series: pd.Series) -> pd.Series:
-    """
-    Parses ISO timestamps or Unix epoch timestamps in seconds,
-    milliseconds, microseconds, or nanoseconds.
+    raw = series.astype("string").str.strip()
+    numeric = pd.to_numeric(raw, errors="coerce")
+    absolute = numeric.abs()
+    parsed = pd.Series(
+        pd.NaT,
+        index=series.index,
+        dtype="datetime64[ns, UTC]",
+    )
 
-    Important because pd.to_datetime(numeric_series) defaults to nanoseconds,
-    which can incorrectly produce 1970 timestamps if the source is Unix seconds.
-    """
-    numeric = pd.to_numeric(series, errors="coerce")
+    unit_masks = {
+        "s": numeric.notna() & absolute.lt(100_000_000_000),
+        "ms": (
+            numeric.notna()
+            & absolute.ge(100_000_000_000)
+            & absolute.lt(100_000_000_000_000)
+        ),
+        "us": (
+            numeric.notna()
+            & absolute.ge(100_000_000_000_000)
+            & absolute.lt(100_000_000_000_000_000)
+        ),
+        "ns": numeric.notna() & absolute.ge(100_000_000_000_000_000),
+    }
 
-    if numeric.notna().mean() > 0.8:
-        median = numeric.dropna().median()
+    counts = {}
+    for unit, mask in unit_masks.items():
+        counts[unit] = int(mask.sum())
+        if mask.any():
+            parsed.loc[mask] = pd.to_datetime(
+                numeric.loc[mask],
+                unit=unit,
+                utc=True,
+                errors="coerce",
+            )
 
-        if median > 1e18:
-            unit = "ns"
-        elif median > 1e15:
-            unit = "us"
-        elif median > 1e12:
-            unit = "ms"
-        else:
-            unit = "s"
-
-        parsed = pd.to_datetime(numeric, unit=unit, utc=True, errors="coerce")
-
-        LOGGER.info(
-            "Parsed numeric timestamp column using Unix unit='%s'. "
-            "Parsed range: %s -> %s",
-            unit,
-            parsed.min(),
-            parsed.max(),
-        )
-
-        return parsed
-
-    parsed = pd.to_datetime(series, utc=True, errors="coerce")
+    text_mask = numeric.isna() & raw.notna() & raw.ne("")
+    counts["text"] = int(text_mask.sum())
+    if text_mask.any():
+        try:
+            text_parsed = pd.to_datetime(
+                raw.loc[text_mask],
+                format="mixed",
+                utc=True,
+                errors="coerce",
+            )
+        except TypeError:
+            text_parsed = pd.to_datetime(
+                raw.loc[text_mask],
+                utc=True,
+                errors="coerce",
+            )
+        parsed.loc[text_mask] = text_parsed
 
     LOGGER.info(
-        "Parsed non-numeric timestamp column. Parsed range: %s -> %s",
+        "Parsed mixed timestamp column with counts=%s. Parsed range: %s -> %s",
+        counts,
         parsed.min(),
         parsed.max(),
     )
@@ -148,14 +159,7 @@ def normalize_prices_by_platform(
     df: pd.DataFrame,
     price_cols: list[str],
 ) -> pd.DataFrame:
-    """
-    Converts price columns to decimal probability format.
 
-    Kalshi may appear as cents, e.g. 47.
-    Polymarket usually appears as decimal, e.g. 0.47.
-
-    This detects by platform and column using median > 1.
-    """
     df = df.copy()
 
     for platform in df["platform"].dropna().unique():
@@ -201,10 +205,6 @@ def cast_id_columns(df: pd.DataFrame, cols: list[str]) -> pd.DataFrame:
 
     return df
 
-
-# ============================================================
-# Load BBO data
-# ============================================================
 
 def load_bbo() -> pd.DataFrame:
     require_file(KALSHI_BBO_PATH)
@@ -260,17 +260,17 @@ def load_bbo() -> pd.DataFrame:
         ["best_bid", "best_ask", "mid_price"],
     )
 
-    # Remove empty books / invalid rows
+
     before = len(bbo)
 
     bbo = bbo.dropna(subset=["timestamp", "best_bid", "best_ask"])
     bbo = bbo[(bbo["best_bid"] > 0) & (bbo["best_ask"] > 0)].copy()
 
-    # Recompute normalized mid price and spread
+
     bbo["mid_price"] = (bbo["best_bid"] + bbo["best_ask"]) / 2.0
     bbo["spread"] = bbo["best_ask"] - bbo["best_bid"]
 
-    # Remove impossible quotes
+
     bbo = bbo[
         (bbo["best_bid"] >= 0)
         & (bbo["best_bid"] <= 1)
@@ -289,16 +289,12 @@ def load_bbo() -> pd.DataFrame:
         f"{before - after:,}",
     )
 
-    # Notional depth
+
     bbo["bid_depth_notional"] = bbo["bid_depth"] * bbo["best_bid"]
     bbo["ask_depth_notional"] = bbo["ask_depth"] * bbo["best_ask"]
 
     return bbo
 
-
-# ============================================================
-# Load trade data
-# ============================================================
 
 def load_trades() -> pd.DataFrame:
     require_file(KALSHI_TRADES_PATH)
@@ -350,7 +346,7 @@ def load_trades() -> pd.DataFrame:
         ],
     )
 
-    # Convert price to decimal if it is in cents.
+
     trades = normalize_prices_by_platform(trades, ["price", "yes_price", "no_price"])
 
     before = len(trades)
@@ -371,7 +367,7 @@ def load_trades() -> pd.DataFrame:
         f"{before - after:,}",
     )
 
-    # Recompute notional where missing
+
     missing_notional = trades["notional"].isna()
 
     if missing_notional.any():
@@ -385,22 +381,11 @@ def load_trades() -> pd.DataFrame:
     return trades
 
 
-# ============================================================
-# Sampling BBO for expensive price-impact computation only
-# ============================================================
 def sample_bbo_snapshots_per_instrument(
     bbo: pd.DataFrame,
     n_snapshots: int = 10,
 ) -> pd.DataFrame:
-    """
-    Samples approximately n_snapshots evenly spaced BBO rows per
-    game/platform/team/instrument.
 
-    Used only for expensive raw-book walking price-impact metrics.
-
-    Important:
-    Full BBO rows are still used for spread/depth/coverage metrics.
-    """
     group_cols = ["game_id", "platform", "team", "instrument_id"]
 
     before = len(bbo)
@@ -441,9 +426,6 @@ def sample_bbo_snapshots_per_instrument(
 
     return sampled
 
-# ============================================================
-# Raw order book parsing
-# ============================================================
 
 def parse_book(raw_book) -> list:
     if pd.isna(raw_book):
@@ -462,14 +444,7 @@ def parse_book(raw_book) -> list:
 
 
 def normalize_book_levels(raw_book, platform: str) -> list[tuple[float, float]]:
-    """
-    Returns [(price, size), ...] with price in decimal format.
 
-    Supports both:
-    [{"price": ..., "size": ...}, ...]
-    and:
-    [[price, size], ...]
-    """
     levels = parse_book(raw_book)
     out = []
 
@@ -484,9 +459,7 @@ def normalize_book_levels(raw_book, platform: str) -> list[tuple[float, float]]:
             else:
                 continue
 
-            # Kalshi raw book prices may be cents.
-            # Polymarket raw book prices are normally decimals.
-            # Only divide if the level price is clearly in cents.
+
             if price > 1:
                 price = price / 100.0
 
@@ -498,24 +471,12 @@ def normalize_book_levels(raw_book, platform: str) -> list[tuple[float, float]]:
     return out
 
 
-# ============================================================
-# Snapshot-wise price impact
-# ============================================================
-
 def avg_execution_price(
     levels: list[tuple[float, float]],
     q: float,
     side: str,
 ) -> float:
-    """
-    Simulates execution against one side of the book.
 
-    side="buy":
-        Walk asks from low to high.
-
-    side="sell":
-        Walk bids from high to low.
-    """
     if not levels:
         return np.nan
 
@@ -552,9 +513,7 @@ def compute_row_price_impacts(
     best_ask: float,
     sizes: tuple[int, ...],
 ) -> dict:
-    """
-    Parses bids/asks once and computes all impact metrics for this row.
-    """
+
     bids = normalize_book_levels(raw_bids, platform="")
     asks = normalize_book_levels(raw_asks, platform="")
 
@@ -577,7 +536,7 @@ def compute_row_price_impacts(
         else:
             sell_impact = np.nan
 
-        # Floating point cleanup only.
+
         eps = 1e-9
 
         if pd.notna(buy_impact) and -eps <= buy_impact < 0:
@@ -586,8 +545,7 @@ def compute_row_price_impacts(
         if pd.notna(sell_impact) and -eps <= sell_impact < 0:
             sell_impact = 0.0
 
-        # Real negatives indicate mismatch between raw book and best quote.
-        # Keep them as NaN for summary metrics.
+
         if pd.notna(buy_impact) and buy_impact < 0:
             buy_impact = np.nan
 
@@ -605,17 +563,7 @@ def add_price_impact_metrics(
     sizes: tuple[int, ...] = PRICE_IMPACT_SIZES,
     progress_every: int = 50_000,
 ) -> pd.DataFrame:
-    """
-    Adds sampled snapshot-wise price impact columns.
 
-    buy_impact_q:
-        avg buy execution price for q - current best ask
-
-    sell_impact_q:
-        current best bid - avg sell execution price for q
-
-    Lower impact = better liquidity.
-    """
     bbo_sample = bbo_sample.copy()
     n = len(bbo_sample)
 
@@ -727,17 +675,11 @@ def build_price_impact_snapshot_metrics(bbo_sample: pd.DataFrame) -> pd.DataFram
     return snapshot
 
 
-# ============================================================
-# Full BBO metrics
-# ============================================================
-
 def compute_full_bbo_metrics(
     bbo: pd.DataFrame,
     group_cols: list[str],
 ) -> pd.DataFrame:
-    """
-    Computes BBO metrics using the full unsampled BBO dataset.
-    """
+
     grouped = bbo.groupby(group_cols, dropna=False)
 
     metrics = grouped.agg(
@@ -773,17 +715,11 @@ def compute_full_bbo_metrics(
     return metrics
 
 
-# ============================================================
-# Sampled price-impact metrics
-# ============================================================
-
 def compute_price_impact_metrics(
     snapshot: pd.DataFrame,
     group_cols: list[str],
 ) -> pd.DataFrame:
-    """
-    Computes price-impact metrics from sampled BBO snapshots only.
-    """
+
     grouped = snapshot.groupby(group_cols, dropna=False)
 
     metrics = grouped.agg(
@@ -817,10 +753,6 @@ def compute_price_impact_metrics(
     return metrics
 
 
-# ============================================================
-# Trade metrics
-# ============================================================
-
 def compute_trade_metrics(
     trades: pd.DataFrame,
     group_cols: list[str],
@@ -851,10 +783,6 @@ def compute_trade_metrics(
     return metrics
 
 
-# ============================================================
-# Final summaries
-# ============================================================
-
 def compute_summary(
     full_bbo: pd.DataFrame,
     impact_snapshot: pd.DataFrame,
@@ -884,10 +812,6 @@ def compute_summary(
     return summary
 
 
-# ============================================================
-# Save outputs
-# ============================================================
-
 def save_outputs(
     impact_snapshot: pd.DataFrame,
     by_instrument: pd.DataFrame,
@@ -911,10 +835,6 @@ def save_outputs(
     LOGGER.info("Saving game/platform summary: %s", BY_GAME_OUTPUT)
     by_game.to_csv(BY_GAME_OUTPUT, index=False)
 
-
-# ============================================================
-# Main
-# ============================================================
 
 def main() -> None:
     total_start = time.time()

@@ -152,3 +152,21 @@
 * Retained 740,419 of 759,586 Polymarket trades and removed 19,167 postgame trades (2.52%)
 * Confirmed that neither dataset contained invalid timestamps
 * Saved the filtered datasets as `bbo_filtered.csv` and `trades_filtered.csv` under `data/processed/polymarket/filtered_bbo_trades`
+
+### 20.07.2026
+
+* Decided to define the analysis window inclusively as `ESPN first play <= observation timestamp <= ESPN game end`, excluding all pregame and postgame observations.
+* The timestamp filter removed 52.87% of all collected rows: 83.20% of Kalshi BBOs, 35.04% of Kalshi trades, 51.26% of Polymarket BBOs, and 46.02% of Polymarket trades.
+* Confirmed complete valid trade coverage for all 268 instruments and 67 games.
+* Found usable BBO data for 256 instruments, allowing complete paired BBO analysis for 58 of 67 games.
+
+#### Problems found
+
+* Six Kalshi instruments had no in-game BBO snapshots despite active in-game trades.
+* Six additional Kalshi instruments had BBO snapshots, but every snapshot was one-sided and unusable.
+* Found 18,387 crossed Kalshi BBO snapshots and 498 crossed Polymarket snapshots in the raw provider data.
+* Found 27,724 Kalshi snapshots with an empty side and 3,866 Polymarket snapshots with a missing side.
+* The fetcher marked games complete even when an instrument returned zero BBO rows.
+* The mappings and timestamps were verified, indicating a likely Predexon Kalshi BBO-history problem.
+* Pending decision: determine whether the 58-game complete BBO sample is sufficient or whether another BBO source is required.
+

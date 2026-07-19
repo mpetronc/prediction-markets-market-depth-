@@ -65,6 +65,8 @@ def map_games(market_map: pd.DataFrame, cutoffs: pd.DataFrame) -> pd.DataFrame:
     required_map = {"game_id", "polymarket_event_title", "matched_game_clean"}
     required_cutoffs = {
         "game",
+        "first_play_utc",
+        "end_timestamp_utc",
         "end_timestamp_unix_s",
         "end_timestamp_unix_ms",
     }
@@ -162,17 +164,21 @@ def map_games(market_map: pd.DataFrame, cutoffs: pd.DataFrame) -> pd.DataFrame:
     for map_index, map_row in market_map.iterrows():
         cutoff_index, match_method, match_score = assignments[map_index]
         cutoff_row = cutoffs.loc[cutoff_index]
-        end_s = pd.to_numeric(cutoff_row["end_timestamp_unix_s"], errors="coerce")
-        end_ms = pd.to_numeric(cutoff_row["end_timestamp_unix_ms"], errors="coerce")
-        if pd.isna(end_s) or pd.isna(end_ms):
-            raise ValueError(f"Missing end timestamp for {cutoff_row['game']}")
+        first_play = pd.to_datetime(
+            cutoff_row["first_play_utc"], utc=True, errors="coerce"
+        )
+        end_time = pd.to_datetime(
+            cutoff_row["end_timestamp_utc"], utc=True, errors="coerce"
+        )
+        if pd.isna(first_play) or pd.isna(end_time):
+            raise ValueError(f"Missing game window for {cutoff_row['game']}")
         records.append(
             {
                 "game_id": str(map_row["game_id"]),
                 "market_game": str(map_row["polymarket_event_title"]),
                 "espn_game": str(cutoff_row["game"]),
-                "end_s": int(end_s),
-                "end_ms": int(end_ms),
+                "start_ns": int(first_play.value),
+                "end_ns": int(end_time.value),
                 "match_method": match_method,
                 "match_score": match_score,
             }
@@ -187,13 +193,47 @@ def map_games(market_map: pd.DataFrame, cutoffs: pd.DataFrame) -> pd.DataFrame:
     return windows
 
 
+def timestamps_to_ns(values: pd.Series) -> pd.Series:
+    raw = values.astype("string").str.strip()
+    numeric = pd.to_numeric(raw, errors="coerce")
+    numeric_int = numeric.round().astype("Int64")
+    absolute = numeric_int.abs()
+    result = pd.Series(pd.NA, index=values.index, dtype="Int64")
+
+    seconds = numeric_int.notna() & absolute.lt(100_000_000_000)
+    milliseconds = (
+        numeric_int.notna()
+        & absolute.ge(100_000_000_000)
+        & absolute.lt(100_000_000_000_000)
+    )
+    microseconds = (
+        numeric_int.notna()
+        & absolute.ge(100_000_000_000_000)
+        & absolute.lt(100_000_000_000_000_000)
+    )
+    nanoseconds = numeric_int.notna() & absolute.ge(100_000_000_000_000_000)
+
+    result.loc[seconds] = numeric_int.loc[seconds] * 1_000_000_000
+    result.loc[milliseconds] = numeric_int.loc[milliseconds] * 1_000_000
+    result.loc[microseconds] = numeric_int.loc[microseconds] * 1_000
+    result.loc[nanoseconds] = numeric_int.loc[nanoseconds]
+
+    datetime_values = numeric_int.isna() & raw.notna() & raw.ne("")
+    if datetime_values.any():
+        parsed = pd.to_datetime(raw.loc[datetime_values], utc=True, errors="coerce")
+        parsed = parsed.loc[parsed.notna()]
+        if not parsed.empty:
+            result.loc[parsed.index] = parsed.astype("int64").astype("Int64")
+
+    return result
+
+
 def filter_file(
     input_path: Path,
     output_path: Path,
     windows: pd.DataFrame,
-    unit: str,
     chunksize: int,
-) -> tuple[int, int, int]:
+) -> tuple[int, int, int, int, int]:
     if not input_path.exists():
         raise FileNotFoundError(f"Input file not found: {input_path}")
 
@@ -203,15 +243,18 @@ def filter_file(
     if missing:
         raise ValueError(f"{input_path} is missing columns: {sorted(missing)}")
 
-    end_column = f"end_{unit}"
-    end_by_game = windows.set_index("game_id")[end_column]
-    known_games = set(end_by_game.index)
+    start_by_game = windows.set_index("game_id")["start_ns"]
+    end_by_game = windows.set_index("game_id")["end_ns"]
+    known_games = set(start_by_game.index)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     temporary_path = output_path.with_suffix(output_path.suffix + ".tmp")
     total_rows = 0
     kept_rows = 0
     invalid_timestamp_rows = 0
+    before_start_rows = 0
+    after_end_rows = 0
+    missing_game_id_rows = 0
     unknown_games: set[str] = set()
     wrote_header = False
 
@@ -224,13 +267,19 @@ def filter_file(
         ):
             original_columns = chunk.columns.tolist()
             game_ids = chunk["game_id"].astype("string")
-            timestamps = pd.to_numeric(chunk["timestamp"], errors="coerce")
+            timestamps = timestamps_to_ns(chunk["timestamp"])
             unknown_games.update(set(game_ids.dropna()) - known_games)
+            missing_game_id_rows += int(game_ids.isna().sum())
+            starts = game_ids.map(start_by_game).astype("Int64")
             ends = game_ids.map(end_by_game)
             valid_timestamps = timestamps.notna()
+            before_start = valid_timestamps & starts.notna() & timestamps.lt(starts)
+            after_end = valid_timestamps & ends.notna() & timestamps.gt(ends)
             valid_rows = (
                 valid_timestamps
+                & starts.notna()
                 & ends.notna()
+                & timestamps.ge(starts)
                 & timestamps.le(ends)
             )
             filtered = chunk.loc[valid_rows, original_columns]
@@ -244,10 +293,16 @@ def filter_file(
             total_rows += len(chunk)
             kept_rows += int(valid_rows.sum())
             invalid_timestamp_rows += int((~valid_timestamps).sum())
+            before_start_rows += int(before_start.sum())
+            after_end_rows += int(after_end.sum())
 
         if unknown_games:
             raise ValueError(
                 f"{input_path} contains unmapped game IDs: {sorted(unknown_games)}"
+            )
+        if missing_game_id_rows:
+            raise ValueError(
+                f"{input_path} contains {missing_game_id_rows} rows without game_id"
             )
 
         if not wrote_header:
@@ -259,7 +314,13 @@ def filter_file(
             temporary_path.unlink()
         raise
 
-    return total_rows, kept_rows, invalid_timestamp_rows
+    return (
+        total_rows,
+        kept_rows,
+        before_start_rows,
+        after_end_rows,
+        invalid_timestamp_rows,
+    )
 
 
 def parse_args() -> argparse.Namespace:
@@ -274,14 +335,6 @@ def main() -> int:
     root = args.project_root.resolve()
     market_map_path = root / "data" / "matched_markets" / "MM_market_map.csv"
     cutoffs_path = root / "data" / "game_cutoffs.csv"
-    bbo_input = root / "data" / "processed" / "polymarket" / "bbo.csv"
-    trades_input = root / "data" / "processed" / "polymarket" / "trades.csv"
-    output_directory = (
-        root / "data" / "processed" / "polymarket" / "filtered_bbo_trades"
-    )
-    bbo_output = output_directory / "bbo_filtered.csv"
-    trades_output = output_directory / "trades_filtered.csv"
-
     try:
         market_map = pd.read_csv(market_map_path, dtype="string")
         cutoffs = pd.read_csv(cutoffs_path)
@@ -296,32 +349,35 @@ def main() -> int:
                     f"({row.match_score:.3f})"
                 )
 
-        bbo_total, bbo_kept, bbo_invalid = filter_file(
-            bbo_input,
-            bbo_output,
-            windows,
-            unit="ms",
-            chunksize=args.chunksize,
-        )
-        print(
-            f"BBO: kept {bbo_kept:,} of {bbo_total:,}; "
-            f"removed {bbo_total - bbo_kept:,}; invalid timestamps {bbo_invalid:,}"
-        )
-        print(f"Saved: {bbo_output}")
-
-        trades_total, trades_kept, trades_invalid = filter_file(
-            trades_input,
-            trades_output,
-            windows,
-            unit="s",
-            chunksize=args.chunksize,
-        )
-        print(
-            f"Trades: kept {trades_kept:,} of {trades_total:,}; "
-            f"removed {trades_total - trades_kept:,}; "
-            f"invalid timestamps {trades_invalid:,}"
-        )
-        print(f"Saved: {trades_output}")
+        for platform in ["kalshi", "polymarket"]:
+            platform_directory = root / "data" / "processed" / platform
+            output_directory = platform_directory / "filtered_bbo_trades"
+            jobs = [
+                (
+                    "BBO",
+                    platform_directory / "bbo.csv",
+                    output_directory / "bbo_filtered.csv",
+                ),
+                (
+                    "Trades",
+                    platform_directory / "trades.csv",
+                    output_directory / "trades_filtered.csv",
+                ),
+            ]
+            print(f"\n{platform.upper()}")
+            for label, input_path, output_path in jobs:
+                total, kept, before, after, invalid = filter_file(
+                    input_path,
+                    output_path,
+                    windows,
+                    chunksize=args.chunksize,
+                )
+                print(
+                    f"{label}: kept {kept:,} of {total:,}; "
+                    f"before game {before:,}; after game {after:,}; "
+                    f"invalid timestamps {invalid:,}"
+                )
+                print(f"Saved: {output_path}")
     except Exception as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
