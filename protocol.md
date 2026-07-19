@@ -143,7 +143,12 @@
 
 ### 18.07.2026-19.07.2026
 
-* Developed a script to retrieve timestamps for all 67 March Madness games from ESPN
-* Used ESPN’s play-by-play “End of Game” records to identify each game’s exact cutoff time
-* Added UTC, Unix-second, and Unix-millisecond timestamps
-* Validated that all 67 games had an explicit end timestamp with no missing values or fallbacks
+* Developed an ESPN data-collection script to retrieve the exact game-end timestamp for all 67 March Madness games
+* Confirmed that all 67 games contained an explicit ESPN “End of Game” timestamp, with no missing values or fallbacks
+* Added UTC, Unix-second, and Unix-millisecond cutoff timestamps to `data/game_cutoffs.csv`
+* Developed the Polymarket timestamp-filtering pipeline and successfully matched all 67 market game IDs to their corresponding ESPN games
+* Configured the current filter to use only the upper bound, retaining pregame and in-game observations while removing data recorded after the game ended
+* Retained 707,662 of 724,096 Polymarket BBO snapshots and removed 16,434 postgame snapshots (2.27%)
+* Retained 740,419 of 759,586 Polymarket trades and removed 19,167 postgame trades (2.52%)
+* Confirmed that neither dataset contained invalid timestamps
+* Saved the filtered datasets as `bbo_filtered.csv` and `trades_filtered.csv` under `data/processed/polymarket/filtered_bbo_trades`
