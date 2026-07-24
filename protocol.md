@@ -170,3 +170,21 @@
 * The mappings and timestamps were verified, indicating a likely Predexon Kalshi BBO-history problem.
 * Pending decision: determine whether the 58-game complete BBO sample is sufficient or whether another BBO source is required.
 
+### 24.07.2026-26-07.2026:
+- Corrected the upstream liquidity-metric computation without recollecting data or calling the Predexon API.
+- Fixed Kalshi order-book price normalization, including one-cent price levels.
+- Separated best-level depth from full-book depth and calculated true notional depth as the sum of price × size across order-book levels.
+- Corrected Kalshi trade orientation so YES- and NO-side trades are consistently expressed as the selected team outcome’s YES probability.
+- Selected one team outcome per game to avoid double-counting complementary contracts.
+- Constructed a 67-game trade sample and a 64-game joint BBO sample.
+- Used Team B by default, with two Team A overrides where only that side had usable Kalshi BBO data:
+  - MM_GAME_037: Tennessee State
+  - MM_GAME_056: Vanderbilt
+- Retained three games for trade analysis but excluded them from BBO analysis:
+  - MM_GAME_006: Arizona
+  - MM_GAME_007: Michigan
+  - MM_GAME_028: Houston
+- Generated 37 paired platform metrics with 2,384 game-metric observations.
+- Descriptive results indicate that spreads are similar, Kalshi has substantially greater displayed depth, Kalshi generally has lower simulated price impact, and Kalshi has approximately four times the trading activity and notional. Trade-price volatility is similar across platforms.
+- Validated the regenerated CSV and Parquet outputs against the raw order books and trades.
+- Next step: estimate paired game-level regressions with game fixed effects and conduct robustness tests.

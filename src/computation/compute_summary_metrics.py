@@ -3,7 +3,6 @@ import json
 import logging
 import sys
 import time
-import warnings
 
 import numpy as np
 import pandas as pd
@@ -39,6 +38,7 @@ BY_INSTRUMENT_OUTPUT = RESULTS_DIR / "summary_metrics_by_instrument_platform.csv
 
 N_PRICE_IMPACT_SNAPSHOTS_PER_INSTRUMENT = 1000
 PRICE_IMPACT_SIZES = (100, 500, 1000)
+DEPTH_PROGRESS_EVERY = 50_000
 
 
 def setup_logger() -> logging.Logger:
@@ -290,8 +290,7 @@ def load_bbo() -> pd.DataFrame:
     )
 
 
-    bbo["bid_depth_notional"] = bbo["bid_depth"] * bbo["best_bid"]
-    bbo["ask_depth_notional"] = bbo["ask_depth"] * bbo["best_ask"]
+    bbo = add_order_book_depth_metrics(bbo)
 
     return bbo
 
@@ -349,6 +348,26 @@ def load_trades() -> pd.DataFrame:
 
     trades = normalize_prices_by_platform(trades, ["price", "yes_price", "no_price"])
 
+    kalshi_mask = trades["platform"].eq("kalshi")
+    missing_yes_price = kalshi_mask & trades["yes_price"].isna()
+    recoverable_yes_price = missing_yes_price & trades["no_price"].notna()
+    trades.loc[recoverable_yes_price, "yes_price"] = (
+        1.0 - trades.loc[recoverable_yes_price, "no_price"]
+    )
+    unresolved_yes_price = kalshi_mask & trades["yes_price"].isna()
+    if unresolved_yes_price.any():
+        raise ValueError(
+            "Kalshi trades contain rows without a recoverable YES price: "
+            f"{int(unresolved_yes_price.sum()):,}"
+        )
+
+    # Every instrument represents the selected team's YES outcome. A Kalshi
+    # NO-side taker is negative order flow in that same outcome, but its
+    # probability must still be expressed as the YES price.
+    trades.loc[kalshi_mask, "price"] = trades.loc[
+        kalshi_mask, "yes_price"
+    ]
+
     before = len(trades)
 
     trades = trades.dropna(subset=["timestamp", "price", "size"])
@@ -376,7 +395,25 @@ def load_trades() -> pd.DataFrame:
             * trades.loc[missing_notional, "size"]
         )
 
+    kalshi_mask = trades["platform"].eq("kalshi")
+    trades.loc[kalshi_mask, "notional"] = (
+        trades.loc[kalshi_mask, "price"]
+        * trades.loc[kalshi_mask, "size"]
+    )
     trades["signed_notional"] = np.sign(trades["signed_size"]) * trades["notional"]
+
+    LOGGER.info(
+        "Oriented %s Kalshi trade rows to YES-outcome prices; NO-side share %.2f%%.",
+        f"{int(kalshi_mask.sum()):,}",
+        100.0
+        * float(
+            trades.loc[kalshi_mask, "side"]
+            .astype("string")
+            .str.lower()
+            .eq("no")
+            .mean()
+        ),
+    )
 
     return trades
 
@@ -448,6 +485,9 @@ def normalize_book_levels(raw_book, platform: str) -> list[tuple[float, float]]:
     levels = parse_book(raw_book)
     out = []
 
+    if platform not in {"kalshi", "polymarket"}:
+        raise ValueError(f"Unknown platform for order-book normalization: {platform}")
+
     for level in levels:
         try:
             if isinstance(level, dict):
@@ -459,8 +499,10 @@ def normalize_book_levels(raw_book, platform: str) -> list[tuple[float, float]]:
             else:
                 continue
 
-
-            if price > 1:
+            # Predexon stores Kalshi raw book levels in integer cents, including
+            # the ambiguous value 1 for one cent. Polymarket levels are already
+            # decimal probabilities, where 1 correctly means one dollar.
+            if platform == "kalshi":
                 price = price / 100.0
 
             if 0 <= price <= 1 and size > 0:
@@ -469,6 +511,136 @@ def normalize_book_levels(raw_book, platform: str) -> list[tuple[float, float]]:
             continue
 
     return out
+
+
+def summarize_book_side(
+    levels: list[tuple[float, float]],
+    best_price: float,
+) -> tuple[float, float, float, float]:
+    if not levels:
+        return np.nan, np.nan, np.nan, np.nan
+
+    full_depth = float(sum(size for _, size in levels))
+    full_notional = float(sum(price * size for price, size in levels))
+    best_depth = float(
+        sum(
+            size
+            for price, size in levels
+            if np.isclose(price, best_price, rtol=1e-9, atol=1e-12)
+        )
+    )
+    if best_depth <= 0:
+        best_depth = np.nan
+        best_notional = np.nan
+    else:
+        best_notional = float(best_price * best_depth)
+
+    return best_depth, full_depth, best_notional, full_notional
+
+
+def add_order_book_depth_metrics(
+    bbo: pd.DataFrame,
+    progress_every: int = DEPTH_PROGRESS_EVERY,
+) -> pd.DataFrame:
+    bbo = bbo.reset_index(drop=True).copy()
+    n = len(bbo)
+    arrays = {
+        "best_bid_depth": np.full(n, np.nan),
+        "best_ask_depth": np.full(n, np.nan),
+        "full_bid_depth": np.full(n, np.nan),
+        "full_ask_depth": np.full(n, np.nan),
+        "best_bid_depth_notional": np.full(n, np.nan),
+        "best_ask_depth_notional": np.full(n, np.nan),
+        "full_bid_depth_notional": np.full(n, np.nan),
+        "full_ask_depth_notional": np.full(n, np.nan),
+    }
+    stored_depth_mismatches = 0
+    unmatched_best_levels = 0
+    start = time.time()
+
+    selected_cols = [
+        "platform",
+        "raw_bids",
+        "raw_asks",
+        "best_bid",
+        "best_ask",
+        "bid_depth",
+        "ask_depth",
+    ]
+    for i, row in enumerate(
+        bbo[selected_cols].itertuples(index=False),
+        start=0,
+    ):
+        bids = normalize_book_levels(row.raw_bids, row.platform)
+        asks = normalize_book_levels(row.raw_asks, row.platform)
+        (
+            best_bid_depth,
+            full_bid_depth,
+            best_bid_notional,
+            full_bid_notional,
+        ) = summarize_book_side(bids, row.best_bid)
+        (
+            best_ask_depth,
+            full_ask_depth,
+            best_ask_notional,
+            full_ask_notional,
+        ) = summarize_book_side(asks, row.best_ask)
+
+        arrays["best_bid_depth"][i] = best_bid_depth
+        arrays["best_ask_depth"][i] = best_ask_depth
+        arrays["full_bid_depth"][i] = full_bid_depth
+        arrays["full_ask_depth"][i] = full_ask_depth
+        arrays["best_bid_depth_notional"][i] = best_bid_notional
+        arrays["best_ask_depth_notional"][i] = best_ask_notional
+        arrays["full_bid_depth_notional"][i] = full_bid_notional
+        arrays["full_ask_depth_notional"][i] = full_ask_notional
+
+        if pd.isna(best_bid_depth) or pd.isna(best_ask_depth):
+            unmatched_best_levels += 1
+
+        for stored, reconstructed in [
+            (row.bid_depth, full_bid_depth),
+            (row.ask_depth, full_ask_depth),
+        ]:
+            if pd.notna(stored) and pd.notna(reconstructed):
+                tolerance = max(1e-6, 1e-8 * abs(reconstructed))
+                if abs(float(stored) - reconstructed) > tolerance:
+                    stored_depth_mismatches += 1
+
+        completed = i + 1
+        if completed % progress_every == 0 or completed == n:
+            elapsed = time.time() - start
+            LOGGER.info(
+                "Depth reconstruction progress: %s/%s rows | %.2f%% | %.0f rows/sec",
+                f"{completed:,}",
+                f"{n:,}",
+                100.0 * completed / n if n else 100.0,
+                completed / elapsed if elapsed > 0 else np.nan,
+            )
+
+    for column, values in arrays.items():
+        bbo[column] = values
+
+    if unmatched_best_levels:
+        raise ValueError(
+            "Could not match the stored best quote to a raw-book level for "
+            f"{unmatched_best_levels:,} BBO rows"
+        )
+    if stored_depth_mismatches:
+        LOGGER.warning(
+            "Stored full-depth values differed from raw-book sums in %s side-rows; "
+            "the reconstructed raw-book values are used.",
+            f"{stored_depth_mismatches:,}",
+        )
+
+    # Preserve the established generic column names as explicit full-book
+    # aliases so downstream code remains compatible.
+    bbo["bid_depth"] = bbo["full_bid_depth"]
+    bbo["ask_depth"] = bbo["full_ask_depth"]
+    bbo["bid_depth_notional"] = bbo["full_bid_depth_notional"]
+    bbo["ask_depth_notional"] = bbo["full_ask_depth_notional"]
+
+    return bbo
 
 
 def avg_execution_price(
@@ -511,11 +683,12 @@ def compute_row_price_impacts(
     raw_asks,
     best_bid: float,
     best_ask: float,
+    platform: str,
     sizes: tuple[int, ...],
 ) -> dict:
 
-    bids = normalize_book_levels(raw_bids, platform="")
-    asks = normalize_book_levels(raw_asks, platform="")
+    bids = normalize_book_levels(raw_bids, platform=platform)
+    asks = normalize_book_levels(raw_asks, platform=platform)
 
     result = {}
 
@@ -577,6 +750,7 @@ def add_price_impact_metrics(
     impact_rows = []
 
     selected_cols = [
+        "platform",
         "raw_bids",
         "raw_asks",
         "best_bid",
@@ -590,6 +764,7 @@ def add_price_impact_metrics(
                 raw_asks=row.raw_asks,
                 best_bid=row.best_bid,
                 best_ask=row.best_ask,
+                platform=row.platform,
                 sizes=sizes,
             )
         )
@@ -648,6 +823,14 @@ def build_price_impact_snapshot_metrics(bbo_sample: pd.DataFrame) -> pd.DataFram
         "ask_depth",
         "bid_depth_notional",
         "ask_depth_notional",
+        "best_bid_depth",
+        "best_ask_depth",
+        "full_bid_depth",
+        "full_ask_depth",
+        "best_bid_depth_notional",
+        "best_ask_depth_notional",
+        "full_bid_depth_notional",
+        "full_ask_depth_notional",
 
         "raw_bids",
         "raw_asks",
@@ -710,6 +893,42 @@ def compute_full_bbo_metrics(
 
         avg_ask_depth_notional=("ask_depth_notional", "mean"),
         median_ask_depth_notional=("ask_depth_notional", "median"),
+
+        avg_best_bid_depth=("best_bid_depth", "mean"),
+        median_best_bid_depth=("best_bid_depth", "median"),
+
+        avg_best_ask_depth=("best_ask_depth", "mean"),
+        median_best_ask_depth=("best_ask_depth", "median"),
+
+        avg_full_bid_depth=("full_bid_depth", "mean"),
+        median_full_bid_depth=("full_bid_depth", "median"),
+
+        avg_full_ask_depth=("full_ask_depth", "mean"),
+        median_full_ask_depth=("full_ask_depth", "median"),
+
+        avg_best_bid_depth_notional=("best_bid_depth_notional", "mean"),
+        median_best_bid_depth_notional=(
+            "best_bid_depth_notional",
+            "median",
+        ),
+
+        avg_best_ask_depth_notional=("best_ask_depth_notional", "mean"),
+        median_best_ask_depth_notional=(
+            "best_ask_depth_notional",
+            "median",
+        ),
+
+        avg_full_bid_depth_notional=("full_bid_depth_notional", "mean"),
+        median_full_bid_depth_notional=(
+            "full_bid_depth_notional",
+            "median",
+        ),
+
+        avg_full_ask_depth_notional=("full_ask_depth_notional", "mean"),
+        median_full_ask_depth_notional=(
+            "full_ask_depth_notional",
+            "median",
+        ),
     ).reset_index()
 
     return metrics
@@ -820,20 +1039,27 @@ def save_outputs(
     LOGGER.info("Saving sampled price-impact snapshot CSV: %s", SNAPSHOT_OUTPUT_CSV)
     impact_snapshot.to_csv(SNAPSHOT_OUTPUT_CSV, index=False)
 
-    LOGGER.info("Saving sampled price-impact snapshot parquet: %s", SNAPSHOT_OUTPUT_PARQUET)
-    try:
-        impact_snapshot.to_parquet(SNAPSHOT_OUTPUT_PARQUET, index=False)
-    except Exception as e:
-        warnings.warn(
-            f"Could not save parquet file. CSV was saved. Error: {e}"
-        )
-        LOGGER.warning("Could not save parquet file. Error: %s", e)
-
     LOGGER.info("Saving instrument summary: %s", BY_INSTRUMENT_OUTPUT)
     by_instrument.to_csv(BY_INSTRUMENT_OUTPUT, index=False)
 
     LOGGER.info("Saving game/platform summary: %s", BY_GAME_OUTPUT)
     by_game.to_csv(BY_GAME_OUTPUT, index=False)
+
+    parquet_temporary = SNAPSHOT_OUTPUT_PARQUET.with_suffix(".parquet.tmp")
+    LOGGER.info(
+        "Saving sampled price-impact snapshot parquet: %s",
+        SNAPSHOT_OUTPUT_PARQUET,
+    )
+    try:
+        impact_snapshot.to_parquet(parquet_temporary, index=False)
+        parquet_temporary.replace(SNAPSHOT_OUTPUT_PARQUET)
+    except Exception as exc:
+        parquet_temporary.unlink(missing_ok=True)
+        raise RuntimeError(
+            "CSV summaries were saved, but the Parquet snapshot could not be "
+            "refreshed. Install pyarrow or fastparquet before using the "
+            "existing Parquet path."
+        ) from exc
 
 
 def main() -> None:

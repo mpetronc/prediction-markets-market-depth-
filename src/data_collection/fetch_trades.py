@@ -276,14 +276,13 @@ def normalize_kalshi_trade(game_id, team, ticker, trade):
     except Exception:
         size = None
 
+    price = yes_price
+
     if side == "yes":
-        price = yes_price
         signed_size = size
     elif side == "no":
-        price = no_price
         signed_size = -size if size is not None else None
     else:
-        price = yes_price
         signed_size = None
 
     notional = None
