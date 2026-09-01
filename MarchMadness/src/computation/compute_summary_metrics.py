@@ -400,6 +400,38 @@ def load_trades() -> pd.DataFrame:
         trades.loc[kalshi_mask, "price"]
         * trades.loc[kalshi_mask, "size"]
     )
+
+    polymarket_mask = trades["platform"].eq("polymarket")
+    polymarket_side = (
+        trades.loc[polymarket_mask, "side"]
+        .astype("string")
+        .str.strip()
+        .str.upper()
+    )
+    unexpected_polymarket_side = ~polymarket_side.isin(["BUY", "SELL"])
+    if unexpected_polymarket_side.any():
+        unexpected = sorted(
+            polymarket_side.loc[unexpected_polymarket_side]
+            .dropna()
+            .unique()
+        )
+        raise ValueError(
+            "Polymarket trades contain unexpected maker-side values: "
+            f"{unexpected}"
+        )
+    # Predexon labels Polymarket trades with the maker's side. Signed order
+    # flow must use the aggressive/taker direction: maker BUY is taker sell,
+    # and maker SELL is taker buy.
+    maker_buy_index = polymarket_side.index[polymarket_side.eq("BUY")]
+    maker_sell_index = polymarket_side.index[polymarket_side.eq("SELL")]
+    trades.loc[maker_buy_index, "signed_size"] = -trades.loc[
+        maker_buy_index,
+        "size",
+    ]
+    trades.loc[maker_sell_index, "signed_size"] = trades.loc[
+        maker_sell_index,
+        "size",
+    ]
     trades["signed_notional"] = np.sign(trades["signed_size"]) * trades["notional"]
 
     LOGGER.info(

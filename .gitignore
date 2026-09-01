@@ -3,5 +3,5 @@ __pycache__/
 *.pyc
 .DS_Store
 
-data/processed/
-data/results/
+MarchMadness/data/processed/
+MarchMadness/data/results/

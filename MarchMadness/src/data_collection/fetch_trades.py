@@ -353,10 +353,13 @@ def normalize_polymarket_trade(game_id, team, token_id, trade):
 
     side = trade.get("side")
 
+    # Predexon reports the Polymarket maker's side. Signed order flow must
+    # use the aggressive/taker direction for Kyle lambda: maker BUY means
+    # taker sell, while maker SELL means taker buy.
     if side == "BUY":
-        signed_size = size
-    elif side == "SELL":
         signed_size = -size if size is not None else None
+    elif side == "SELL":
+        signed_size = size
     else:
         signed_size = None
 

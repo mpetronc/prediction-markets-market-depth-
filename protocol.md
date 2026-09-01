@@ -188,3 +188,10 @@
 - Descriptive results indicate that spreads are similar, Kalshi has substantially greater displayed depth, Kalshi generally has lower simulated price impact, and Kalshi has approximately four times the trading activity and notional. Trade-price volatility is similar across platforms.
 - Validated the regenerated CSV and Parquet outputs against the raw order books and trades.
 - Next step: estimate paired game-level regressions with game fixed effects and conduct robustness tests.
+
+### 24.08.2026-01.09.2026:
+- Reorganized the cryptocurrency project into `CRYPTO_UP_DOWN` for 15-minute relative-price markets and `CRYPTO_HOURLY` for hourly fixed-strike markets, with matching BTC, ETHEREUM, and SOLANA directories.
+- Removed 42 redundant empty files inherited from  March Madness structure.
+- Designed a two-stage pipeline that first discovers and exactly matches eligible Polymarket and Kalshi contracts and then fetches trades and order books only for the approved market registry (similar to MM).
+- Limited the initial BTC collection to two weeks in total: 10-17 August for the pre-period and 17-24 August for the post-period. A separate Polymarket crypto-resolution delay on 17 August will be flagged for later robustness testing.
+- Next step: validate Predexon using one BTC market from each venue and contract family, then implement the complete BTC discovery and data-fetching pipelines before extending them to ETH and SOL.
