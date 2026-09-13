@@ -195,3 +195,26 @@
 - Designed a two-stage pipeline that first discovers and exactly matches eligible Polymarket and Kalshi contracts and then fetches trades and order books only for the approved market registry (similar to MM).
 - Limited the initial BTC collection to two weeks in total: 10-17 August for the pre-period and 17-24 August for the post-period. A separate Polymarket crypto-resolution delay on 17 August will be flagged for later robustness testing.
 - Next step: validate Predexon using one BTC market from each venue and contract family, then implement the complete BTC discovery and data-fetching pipelines before extending them to ETH and SOL.
+
+### 02.09.2026-07.09.2026:
+- Completed BTC 15-minute trade collection and BTC 15-minute/hourly BBO collection for the matched two-week sample.
+- Confirmed that Predexon rounds Kalshi's fractional trade quantity to integer `count` and loses sub-cent trade-price precision, while Kalshi's public API exposes exact `count_fp` and `yes_price_dollars` values.
+- Preserved the completed Predexon and Polymarket files and added a separate, resumable native-Kalshi trade collector that uses no API key.
+- Added trade-ID reconciliation and pre/post summaries to measure affected markets, affected trades, and quantity error before replacing any analytical input.
+- Added a native-Kalshi audit for the 142 expected BTC 15-minute intervals absent from the Predexon discovery results.
+- Next step: run both native-Kalshi stages, review their audit summaries, and then promote the exact trade file for downstream processing.
+
+### 02.09.2026-13.09.2026:
+
+- Built and tested complete discovery, exact-matching, trade, BBO, and native-Kalshi collection pipelines for the BTC, ETH, and SOL cryptocurrency samples.
+- Completed the 15-minute Up/Down collection with 1,202 BTC, 1,242 ETH, and 1,298 SOL matched market pairs.
+- Completed the hourly fixed-strike collection with 5,116 BTC and 4,120 ETH matched pairs, covering the one-week pre- and post-treatment periods.
+- Identified that Predexon rounds fractional Kalshi quantities and loses some price precision; retrieved exact `count_fp` and dollar-price fields through Kalshi’s public API and reconciled them using trade IDs.
+- Audited missing 15-minute intervals and distinguished Predexon omissions from 18 markets that were not offered during Kalshi’s scheduled maintenance windows.
+- Added resumable collection, checkpointing, automatic retries, progress logs, and validation summaries across the crypto pipelines.
+- Validated and packaged the BTC and ETH trades and BBO snapshots as compressed CSV files, with separate fractional-trade audit summaries.
+- Confirmed that Polymarket did not offer an hourly SOL fixed-strike series. Consequently, SOL remains in the 15-minute analysis, while the hourly analysis is restricted to BTC and ETH.
+
+### 14.09.2026-15.09.2026:
+
+- Debated and searched for suitable political markets on Polymarket and Kalshi for a potential extension of the matched-market analysis.
