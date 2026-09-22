@@ -1,0 +1,30 @@
+{
+  "schema_version": "2026-09-15.1",
+  "event_key": "iceland_eu_referendum",
+  "family": "political_referendum",
+  "require_full_window": true,
+  "study_window": {
+    "start_utc": "2026-08-10T11:00:00Z",
+    "treatment_utc": "2026-08-17T11:00:00Z",
+    "end_utc": "2026-08-24T11:00:00Z"
+  },
+  "market_groups": [
+    {
+      "group_id": "iceland_eu_negotiations_referendum_2026",
+      "kalshi_event_ticker": "KXICELANDREF-26AUG29",
+      "polymarket_event_slug": "icelandic-european-union-membership-negotiations-referendum-passes-20260609135241589",
+      "markets": [
+        {
+          "pair_id": "IS_EU_REFERENDUM_YES",
+          "canonical_outcome": "Referendum passes / Yes",
+          "analysis_tier": "primary",
+          "kalshi_ticker": "KXICELANDREF-26AUG29-YES",
+          "polymarket_market_slug": "icelandic-european-union-membership-negotiations-referendum-passes-20260609135241589",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts concern a Yes vote to resume Iceland's EU membership negotiations; settlement-source and timing language should be retained."
+        }
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,129 @@
+{
+  "schema_version": "2026-09-15.1",
+  "event_key": "brazil_presidential_election",
+  "family": "political_candidate_winner",
+  "require_full_window": true,
+  "study_window": {
+    "start_utc": "2026-08-10T11:00:00Z",
+    "treatment_utc": "2026-08-17T11:00:00Z",
+    "end_utc": "2026-08-24T11:00:00Z"
+  },
+  "market_groups": [
+    {
+      "group_id": "brazil_president_2026",
+      "kalshi_event_ticker": "KXBRPRES-26",
+      "polymarket_event_slug": "brazil-presidential-election",
+      "markets": [
+        {
+          "pair_id": "BR_LULA",
+          "canonical_outcome": "Luiz Inácio Lula da Silva",
+          "analysis_tier": "primary",
+          "kalshi_ticker": "KXBRPRES-26-LULA",
+          "polymarket_market_slug": "will-luiz-incio-lula-da-silva-win-the-2026-brazilian-presidential-election",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the 2026 Brazilian presidential election; venue-specific fallback language must remain documented."
+        },
+        {
+          "pair_id": "BR_FLAVIO_BOLSONARO",
+          "canonical_outcome": "Flávio Bolsonaro",
+          "analysis_tier": "primary",
+          "kalshi_ticker": "KXBRPRES-26-FBOL",
+          "polymarket_market_slug": "will-flvio-bolsonaro-win-the-2026-brazilian-presidential-election",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the 2026 Brazilian presidential election; venue-specific fallback language must remain documented."
+        },
+        {
+          "pair_id": "BR_RENAN_SANTOS",
+          "canonical_outcome": "Renan Santos",
+          "analysis_tier": "primary",
+          "kalshi_ticker": "KXBRPRES-26-RSAN",
+          "polymarket_market_slug": "will-renan-santos-win-the-2026-brazilian-presidential-election",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the 2026 Brazilian presidential election; venue-specific fallback language must remain documented."
+        },
+        {
+          "pair_id": "BR_JAIR_BOLSONARO",
+          "canonical_outcome": "Jair Bolsonaro",
+          "analysis_tier": "robustness",
+          "kalshi_ticker": "KXBRPRES-26-JB",
+          "polymarket_market_slug": "will-jair-bolsonaro-win-the-2026-brazilian-presidential-election",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the 2026 Brazilian presidential election; venue-specific fallback language must remain documented."
+        },
+        {
+          "pair_id": "BR_FERNANDO_HADDAD",
+          "canonical_outcome": "Fernando Haddad",
+          "analysis_tier": "robustness",
+          "kalshi_ticker": "KXBRPRES-26-FH",
+          "polymarket_market_slug": "will-fernando-haddad-win-the-2026-brazilian-presidential-election",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the 2026 Brazilian presidential election; venue-specific fallback language must remain documented."
+        },
+        {
+          "pair_id": "BR_TARCISIO_DE_FREITAS",
+          "canonical_outcome": "Tarcísio de Freitas",
+          "analysis_tier": "robustness",
+          "kalshi_ticker": "KXBRPRES-26-TDF",
+          "polymarket_market_slug": "will-tarcisio-de-frietas-win-the-2026-brazilian-presidential-election",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the 2026 Brazilian presidential election; venue-specific fallback language must remain documented."
+        },
+        {
+          "pair_id": "BR_MICHELLE_BOLSONARO",
+          "canonical_outcome": "Michelle Bolsonaro",
+          "analysis_tier": "robustness",
+          "kalshi_ticker": "KXBRPRES-26-MB",
+          "polymarket_market_slug": "will-michelle-bolsonaro-win-the-2026-brazilian-presidential-election",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the 2026 Brazilian presidential election; venue-specific fallback language must remain documented."
+        },
+        {
+          "pair_id": "BR_EDUARDO_BOLSONARO",
+          "canonical_outcome": "Eduardo Bolsonaro",
+          "analysis_tier": "robustness",
+          "kalshi_ticker": "KXBRPRES-26-EBOL",
+          "polymarket_market_slug": "will-eduardo-bolsonaro-win-the-2026-brazilian-presidential-election",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the 2026 Brazilian presidential election; venue-specific fallback language must remain documented."
+        },
+        {
+          "pair_id": "BR_RATINHO_JUNIOR",
+          "canonical_outcome": "Ratinho Júnior / Carlos Roberto Massa Júnior",
+          "analysis_tier": "robustness",
+          "kalshi_ticker": "KXBRPRES-26-RJUN",
+          "polymarket_market_slug": "will-carlos-roberto-massa-jnior-win-the-2026-brazilian-presidential-election",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the 2026 Brazilian presidential election; venue-specific fallback language must remain documented."
+        },
+        {
+          "pair_id": "BR_ROMEU_ZEMA",
+          "canonical_outcome": "Romeu Zema",
+          "analysis_tier": "robustness",
+          "kalshi_ticker": "KXBRPRES-26-RZEM",
+          "polymarket_market_slug": "will-romeu-zema-win-the-2026-brazilian-presidential-election",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the 2026 Brazilian presidential election; venue-specific fallback language must remain documented."
+        },
+        {
+          "pair_id": "BR_RONALDO_CAIADO",
+          "canonical_outcome": "Ronaldo Caiado",
+          "analysis_tier": "robustness",
+          "kalshi_ticker": "KXBRPRES-26-RCAI",
+          "polymarket_market_slug": "will-ronaldo-caiado-win-the-2026-brazilian-presidential-election",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the 2026 Brazilian presidential election; venue-specific fallback language must remain documented."
+        },
+        {
+          "pair_id": "BR_ALDO_REBELO",
+          "canonical_outcome": "Aldo Rebelo",
+          "analysis_tier": "robustness",
+          "kalshi_ticker": "KXBRPRES-26-AREB",
+          "polymarket_market_slug": "will-aldo-rebelo-win-the-2026-brazilian-presidential-election",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the 2026 Brazilian presidential election; venue-specific fallback language must remain documented."
+        }
+      ]
+    }
+  ]
+}
+

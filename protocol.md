@@ -204,6 +204,10 @@
 - Added a native-Kalshi audit for the 142 expected BTC 15-minute intervals absent from the Predexon discovery results.
 - Next step: run both native-Kalshi stages, review their audit summaries, and then promote the exact trade file for downstream processing.
 
+### 17.08.2026:
+
+- Began considering Polymarket’s reduction of the crypto-market taker delay from 250 ms to 50 ms as a potential natural experiment for comparing market quality before and after the change.
+
 ### 02.09.2026-13.09.2026:
 
 - Built and tested complete discovery, exact-matching, trade, BBO, and native-Kalshi collection pipelines for the BTC, ETH, and SOL cryptocurrency samples.
@@ -215,6 +219,23 @@
 - Validated and packaged the BTC and ETH trades and BBO snapshots as compressed CSV files, with separate fractional-trade audit summaries.
 - Confirmed that Polymarket did not offer an hourly SOL fixed-strike series. Consequently, SOL remains in the 15-minute analysis, while the hourly analysis is restricted to BTC and ETH.
 
-### 14.09.2026-15.09.2026:
+### 14.09.2026-22.09.2026:
 
-- Debated and searched for suitable political markets on Polymarket and Kalshi for a potential extension of the matched-market analysis.
+- Evaluated cross-listed political markets using full two-week coverage, contract comparability, liquidity, rule consistency and resolution timing around the 17 August 2026 intervention.
+- Selected three political control families: the Brazil presidential election, Iceland EU-negotiations referendum and Massachusetts Democratic primaries.
+- Verified 25 matched Kalshi–Polymarket contracts against official metadata:
+  - Brazil: 12 candidates, including three primary contracts.
+  - Iceland: one referendum contract.
+  - Massachusetts: 12 candidates across five primaries, including seven primary contracts.
+- Created a standardized directory and configuration structure for all three event families.
+- Built a reusable pipeline for market mapping, trade collection, historical BBO collection, normalization, auditing and offline analysis.
+- Used exact Kalshi fixed-point trade quantities and corrected Polymarket double-counting by collapsing matched order legs into one transaction per transaction hash.
+- Added resumable per-market downloads, retries, raw-response preservation, manifests and timestamped logs.
+- Marked the political markets as untreated controls because the Polymarket delay change applied to crypto markets.
+- Built balanced 336-hour panels with spreads, best-level and full-book depth, notional depth, quote staleness, trade activity and simulated price impact for 100, 500 and 1,000 contracts.
+- Added paired platform comparisons, pre/post changes, quality diagnostics and a script combining all three political event families.
+- Added ten automated tests covering configurations, trade orientation, transaction aggregation, BBO normalization, depth calculations and panel construction.
+- Completed an end-to-end Iceland validation: 104 Kalshi trades, 185 Polymarket transactions, 26,752 Kalshi BBO observations, 146 Polymarket BBO observations and 672 hourly panel rows.
+- Reproduced the expected Lula trade counts and successfully validated the Ed Markey contract as additional live tests.
+- Added Git rules that retain scripts, configurations and directory structure while excluding downloaded and generated datasets.
+- Next step: run the complete Brazil and Massachusetts collections, combine all three political panels and inspect coverage before integrating them into the main empirical analysis.

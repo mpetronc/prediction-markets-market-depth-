@@ -1,0 +1,157 @@
+{
+  "schema_version": "2026-09-15.1",
+  "event_key": "massachusetts_democratic_primaries",
+  "family": "political_primary_candidate",
+  "require_full_window": true,
+  "study_window": {
+    "start_utc": "2026-08-10T11:00:00Z",
+    "treatment_utc": "2026-08-17T11:00:00Z",
+    "end_utc": "2026-08-24T11:00:00Z"
+  },
+  "market_groups": [
+    {
+      "group_id": "ma_senate_democratic_primary_2026",
+      "kalshi_event_ticker": "KXSENATEMAD-26",
+      "polymarket_event_slug": "massachusetts-democratic-senate-primary-winner",
+      "markets": [
+        {
+          "pair_id": "MA_SEN_ED_MARKEY",
+          "canonical_outcome": "Ed Markey",
+          "analysis_tier": "primary",
+          "kalshi_ticker": "KXSENATEMAD-26-EMAR",
+          "polymarket_market_slug": "will-ed-markey-be-the-democratic-nominee-for-senate-in-massachusetts",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the corresponding Massachusetts Democratic nomination; venue-specific fallback language must remain documented."
+        },
+        {
+          "pair_id": "MA_SEN_SETH_MOULTON",
+          "canonical_outcome": "Seth Moulton",
+          "analysis_tier": "primary",
+          "kalshi_ticker": "KXSENATEMAD-26-SMOU",
+          "polymarket_market_slug": "will-seth-moulton-be-the-democratic-nominee-for-senate-in-massachusetts",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the corresponding Massachusetts Democratic nomination; venue-specific fallback language must remain documented."
+        },
+        {
+          "pair_id": "MA_SEN_AYANNA_PRESSLEY",
+          "canonical_outcome": "Ayanna Pressley",
+          "analysis_tier": "robustness",
+          "kalshi_ticker": "KXSENATEMAD-26-APRE",
+          "polymarket_market_slug": "will-ayanna-pressley-be-the-democratic-nominee-for-senate-in-massachusetts",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the corresponding Massachusetts Democratic nomination; venue-specific fallback language must remain documented."
+        },
+        {
+          "pair_id": "MA_SEN_ALEXANDER_RIKLEEN",
+          "canonical_outcome": "Alexander Rikleen",
+          "analysis_tier": "robustness",
+          "kalshi_ticker": "KXSENATEMAD-26-ARIK",
+          "polymarket_market_slug": "will-alexander-rikleen-be-the-democratic-nominee-for-senate-in-massachusetts",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the corresponding Massachusetts Democratic nomination; venue-specific fallback language must remain documented."
+        }
+      ]
+    },
+    {
+      "group_id": "ma_01_democratic_primary_2026",
+      "kalshi_event_ticker": "KXMAPRIMARY-01D26",
+      "polymarket_event_slug": "ma-01-democratic-primary-winner-20260727173754524",
+      "markets": [
+        {
+          "pair_id": "MA_01_RICHARD_NEAL",
+          "canonical_outcome": "Richard Neal",
+          "analysis_tier": "primary",
+          "kalshi_ticker": "KXMAPRIMARY-01D26-RNEA",
+          "polymarket_market_slug": "will-richard-neal-be-the-ma-01-democratic-nominee-20260727173754525",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the corresponding Massachusetts Democratic nomination; venue-specific fallback language must remain documented."
+        },
+        {
+          "pair_id": "MA_01_JEROMIE_WHALEN",
+          "canonical_outcome": "Jeromie Whalen",
+          "analysis_tier": "primary",
+          "kalshi_ticker": "KXMAPRIMARY-01D26-JWHA",
+          "polymarket_market_slug": "will-jeromie-whalen-be-the-ma-01-democratic-nominee-20260727173754526",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the corresponding Massachusetts Democratic nomination; venue-specific fallback language must remain documented."
+        }
+      ]
+    },
+    {
+      "group_id": "ma_04_democratic_primary_2026",
+      "kalshi_event_ticker": "KXMAPRIMARY-04D26",
+      "polymarket_event_slug": "ma-04-democratic-primary-winner-20260727180932560",
+      "markets": [
+        {
+          "pair_id": "MA_04_JAKE_AUCHINCLOSS",
+          "canonical_outcome": "Jake Auchincloss",
+          "analysis_tier": "primary",
+          "kalshi_ticker": "KXMAPRIMARY-04D26-JAUC",
+          "polymarket_market_slug": "will-jake-auchincloss-be-the-ma-04-democratic-nominee-20260727180932561",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the corresponding Massachusetts Democratic nomination; venue-specific fallback language must remain documented."
+        },
+        {
+          "pair_id": "MA_04_JASON_POULOS",
+          "canonical_outcome": "Jason Poulos",
+          "analysis_tier": "primary",
+          "kalshi_ticker": "KXMAPRIMARY-04D26-JPOU",
+          "polymarket_market_slug": "will-jason-poulos-be-the-ma-04-democratic-nominee-20260727180932562",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the corresponding Massachusetts Democratic nomination; venue-specific fallback language must remain documented."
+        }
+      ]
+    },
+    {
+      "group_id": "ma_08_democratic_primary_2026",
+      "kalshi_event_ticker": "KXMAPRIMARY-08D26",
+      "polymarket_event_slug": "ma-08-democratic-primary-winner",
+      "markets": [
+        {
+          "pair_id": "MA_08_STEPHEN_LYNCH",
+          "canonical_outcome": "Stephen Lynch",
+          "analysis_tier": "primary",
+          "kalshi_ticker": "KXMAPRIMARY-08D26-SLYN",
+          "polymarket_market_slug": "will-stephen-lynch-be-the-democratic-nominee-for-ma-08",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the corresponding Massachusetts Democratic nomination; venue-specific fallback language must remain documented."
+        },
+        {
+          "pair_id": "MA_08_PATRICK_ROATH",
+          "canonical_outcome": "Patrick Roath",
+          "analysis_tier": "robustness",
+          "kalshi_ticker": "KXMAPRIMARY-08D26-PROA",
+          "polymarket_market_slug": "will-patrick-roath-be-the-democratic-nominee-for-ma-08",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the corresponding Massachusetts Democratic nomination; venue-specific fallback language must remain documented."
+        }
+      ]
+    },
+    {
+      "group_id": "ma_09_democratic_primary_2026",
+      "kalshi_event_ticker": "KXMAPRIMARY-09D26",
+      "polymarket_event_slug": "ma-09-democratic-primary-winner-20260727181858121",
+      "markets": [
+        {
+          "pair_id": "MA_09_BILL_KEATING",
+          "canonical_outcome": "Bill Keating",
+          "analysis_tier": "robustness",
+          "kalshi_ticker": "KXMAPRIMARY-09D26-BKEA",
+          "polymarket_market_slug": "will-bill-keating-be-the-ma-09-democratic-nominee-20260727181858122",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the corresponding Massachusetts Democratic nomination; venue-specific fallback language must remain documented."
+        },
+        {
+          "pair_id": "MA_09_CRAIG_SWALLOW",
+          "canonical_outcome": "Craig Swallow",
+          "analysis_tier": "robustness",
+          "kalshi_ticker": "KXMAPRIMARY-09D26-CSWA",
+          "polymarket_market_slug": "will-craig-swallow-be-the-ma-09-democratic-nominee-20260727181858123",
+          "rule_match_status": "substantively_matched_manual_review_required",
+          "rule_notes": "Both contracts ask whether the named candidate wins the corresponding Massachusetts Democratic nomination; venue-specific fallback language must remain documented."
+        }
+      ]
+    }
+  ]
+}
+

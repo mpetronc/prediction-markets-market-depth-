@@ -1,7 +1,78 @@
-.env
-__pycache__/
-*.pyc
-.DS_Store
+# Keep source code, notebooks, documentation and configuration in Git.
+# These rules do not delete local files or untrack files already committed.
 
-MarchMadness/data/processed/
-MarchMadness/data/results/
+# Research datasets and generated results, across all market families.
+# Reopen directories so README.md and .gitkeep files can preserve the layout.
+**/data/**
+!**/data/**/
+!**/data/**/[Rr][Ee][Aa][Dd][Mm][Ee].md
+!**/data/**/.gitkeep
+
+# Local exports, scratch work and generated reports at the project root.
+/output/
+/outputs/
+/tmp/
+/.artifact_work/
+/logs/
+
+# Large data containers, databases and compressed delivery bundles.
+# Do not blanket-ignore CSV or JSON: small configs and test fixtures may use them.
+*.parquet
+*.pq
+*.arrow
+*.feather
+*.h5
+*.hdf5
+*.db
+*.sqlite
+*.sqlite3
+*.zip
+*.tar
+*.tgz
+*.gz
+*.bz2
+*.xz
+*.zst
+
+# Python environments, caches, build products and test reports.
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+build/
+dist/
+*.egg-info/
+node_modules/
+*.log
+
+# Local editor and operating-system files.
+.idea/
+.vscode/
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# Credentials and private keys. Example/template files must contain no secrets.
+.env
+.env.*
+!.env.example
+!.env.template
+.secrets/
+secrets/
+credentials.json
+credentials.*.json
+*.pem
+*.key
+*.p12
+*.pfx
