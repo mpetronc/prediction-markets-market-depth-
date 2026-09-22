@@ -2,11 +2,10 @@
 # These rules do not delete local files or untrack files already committed.
 
 # Research datasets and generated results, across all market families.
-# Reopen directories so README.md and .gitkeep files can preserve the layout.
+# Reopen directories only so an optional README can document a data layout.
 **/data/**
 !**/data/**/
 !**/data/**/[Rr][Ee][Aa][Dd][Mm][Ee].md
-!**/data/**/.gitkeep
 
 # Local exports, scratch work and generated reports at the project root.
 /output/
@@ -14,6 +13,7 @@
 /tmp/
 /.artifact_work/
 /logs/
+/project_structure.txt
 
 # Large data containers, databases and compressed delivery bundles.
 # Do not blanket-ignore CSV or JSON: small configs and test fixtures may use them.

@@ -20,7 +20,7 @@ from dotenv import load_dotenv
 
 
 ASSET_ROOT = Path(__file__).resolve().parents[2]
-REPO_ROOT = Path(__file__).resolve().parents[4]
+REPO_ROOT = Path(__file__).resolve().parents[5]
 load_dotenv(REPO_ROOT / ".env")
 
 API_KEY_ENV = "PREDX_API_KEY"

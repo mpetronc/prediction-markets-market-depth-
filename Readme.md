@@ -6,8 +6,8 @@ A central part of the project examines market behavior around Polymarket’s red
 
 ## Market samples
 
-- `crypto/CRYPTO_UP_DOWN`: 15-minute cryptocurrency direction markets
-- `crypto/CRYPTO_HOURLY`: hourly cryptocurrency price markets
+- `CRYPTO/CRYPTO_UP_DOWN`: 15-minute cryptocurrency direction markets
+- `CRYPTO/CRYPTO_HOURLY`: hourly cryptocurrency price markets
 - `MarchMadness`: matched NCAA tournament game-winner markets
 - `POLITICAL_EVENTS`: Brazil’s presidential election, Iceland’s EU referendum, and Massachusetts Democratic primaries
 
@@ -20,8 +20,12 @@ A central part of the project examines market behavior around Polymarket’s red
 - Build pre/post and cross-platform analysis panels
 - Produce coverage audits and reproducible summary outputs
 
-Raw and generated datasets are excluded from GitHub because of their size. The repository contains the collection and analysis code, market configurations, tests, documentation, and an `.env.example` file for local setup.
+## Local setup
 
-See the README inside each project directory for pipeline-specific instructions.
+Install the dependencies required by the relevant pipeline, copy `.env.example` to `.env`, and add the required API credentials locally. Never commit the resulting `.env` file.
+
+Raw data, processed datasets, logs, and generated results are excluded from GitHub because of their size. They remain in each project's local `data` directory and can be regenerated with the included pipelines.
+
+See `POLITICAL_EVENTS/README.md` for the political-event workflow and `protocol.md` for the project history and methodology notes.
 
 > Research project in progress.

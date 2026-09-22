@@ -22,7 +22,7 @@ Each event family follows the same structure:
 - `src/processing`: normalization, window filtering, and data-quality checks.
 - `src/computation`: summary metrics, regression panels, and treatment-effect analysis.
 
-The data directories are excluded by the repository `.gitignore`; their `.gitkeep` files preserve the directory structure on GitHub. Source code and documentation remain trackable.
+The data directories are excluded by the repository `.gitignore` and are created locally by the pipeline as needed. Source code and documentation remain trackable.
 
 ## Implemented pipeline
 
@@ -104,4 +104,4 @@ This writes the complete political-control panel under
 the `analyze` stage or the combined analysis script.
 
 Raw responses and generated datasets stay ignored by Git. Code, configurations,
-documentation, and the empty directory layout remain visible on GitHub.
+and documentation remain visible on GitHub.
